@@ -22,3 +22,13 @@ Route::get('home', function () {
 Route::get('register', function () {
     return view('RegisterForm');
 });
+
+
+//test 
+Route::get('/book', function(){
+    
+    $books = \App\Books::find(2)->author();
+
+
+    print_r($books);
+});
