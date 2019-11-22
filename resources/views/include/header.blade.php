@@ -35,7 +35,7 @@
             </a>
             <ul class="dropdown-menu">
               <li id="register"><a href="register">Register</a></li>
-              <li id="login"><a href="">Login</a></li>
+              <li id="login"><a href="login">Login</a></li>
             </ul>
           </div>
           <div class="header-cart col-lg-6">

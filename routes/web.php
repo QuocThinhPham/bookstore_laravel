@@ -22,3 +22,7 @@ Route::get('home', function () {
 Route::get('register', function () {
     return view('RegisterForm');
 });
+Route::get('login',function(){
+    return view('LoginForm');
+});
+Route::resource('books','BooksController');

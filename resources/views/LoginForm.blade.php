@@ -2,7 +2,7 @@
 
 @section("content")
 <div class="form login">
-  <form action="" method="get" class="form-horizontal">
+  <form action="" method="post" class="form-horizontal">
     <h3>Login</h3>
     <div class="form-group">
       <label class="control-label col-lg-4">Username</label>
