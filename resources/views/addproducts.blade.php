@@ -13,36 +13,7 @@
 </head>
 
 <style>
-  div.form {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 35%;
-    padding: 1rem 1.5rem;
-    border: 1px solid #000;
-  }
 
-  div.form h3 {
-    text-align: center;
-    font-size: 2em;
-    font-weight: bold;
-    padding: 0.2rem 2rem;
-  }
-
-  .showForm {
-    display: block !important;
-  }
-
-  div.form .form-group .control-label {
-    font-size: 1.6rem;
-    font-weight: normal;
-    text-align: center;
-  }
-
-  .btn.btn-primary {
-    font-size: 1.7rem;
-  }
 </style>
 
 <body>
@@ -114,51 +85,7 @@
       </div>
     </form>
   </div>
-  <!-- Custumer Form -->
-  <div class="form form-customer" style="display: none;">
-    <form action="" method="get" class="form-horizontal">
-      <h3>Register</h3>
-      <div class="form-group">
-        <label class="control-label col-lg-4">Full Name</label>
-        <div class="col-lg-8">
-          <input type="text" name="username" id="" class="form-control">
-        </div>
-      </div>
-      <div class="form-group">
-        <label class="control-label col-lg-4">Phone Number</label>
-        <div class="col-lg-8">
-          <input type="number" name="phone-number" id="" class="form-control">
-        </div>
-      </div>
-      <div class="form-group">
-        <label class="control-label col-lg-4">Date Of Birth</label>
-        <div class="col-lg-8">
-          <input type="date" name="bỉthday" id="" class="form-control">
-        </div>
-      </div>
-      <div class="form-group">
-        <label class="control-label col-lg-4">Address</label>
-        <div class="col-lg-8">
-          <input type="text" name="address" id="" class="form-control">
-        </div>
-      </div>
-      <div class="form-group">
-        <label class="control-label col-lg-4">Password</label>
-        <div class="col-lg-8">
-          <input type="password" name="password" id="" class="form-control">
-        </div>
-      </div>
-      <div class="form-group">
-        <label class="control-label col-lg-4">Repeat Password</label>
-        <div class="col-lg-8">
-          <input type="password" name="re-password" id="" class="form-control">
-        </div>
-      </div>
-      <div class="form-group text-center">
-        <button type="submit" class="btn btn-primary">Register</button>
-      </div>
-    </form>
-  </div>
+
 
   <!-- jQuery -->
   <script src="{{('frontend/js/jquery-3.4.1.min.js')}}"></script>

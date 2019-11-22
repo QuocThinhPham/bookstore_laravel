@@ -12,13 +12,13 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
-Route::get('/quantri', function () {
-    return view('addproducts');
+Route::get('home', function () {
+    return view('home');
 });
 
-Route::get('/ten{ten}', function ($ten) {
-    echo "<h1>Chào bạn, " . $ten . "</h1>";
+Route::get('register', function () {
+    return view('RegisterForm');
 });
