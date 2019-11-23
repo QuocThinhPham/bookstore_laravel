@@ -6,8 +6,19 @@ use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
-    public function checkUser()
+    public function CheckUser(Request $request)
     {
-        // $user = ""
+        $user = $request->input('username');
+        $pass = $request->input('password');
+        if($user == "thinh123" && $pass == "123")
+        {
+            echo 'thanh cong';
+            return view('home');
+        }
+        else
+        {
+            echo 'that bai';
+            return view('LoginForm'); 
+        }
     }
 }

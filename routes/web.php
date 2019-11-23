@@ -11,9 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
 
 Route::get('home', function () {
     return view('home');
@@ -25,4 +22,5 @@ Route::get('register', function () {
 Route::get('login',function(){
     return view('LoginForm');
 });
+Route::post('login-form',['uses'=> 'LoginController@CheckUser']);
 Route::resource('books','BooksController');
