@@ -1,6 +1,7 @@
 @extends("layout.Forms")
 
 @section("content")
+@crlf
 <div class="form login">
   <form action="" method="get" class="form-horizontal">
     <h3>Login</h3>
