@@ -26,18 +26,31 @@
           </div>
         </div>
         <div class="header-nav-right col-lg-4 col-lg-offset-6">
+        <!-- login part -->
           <div class="dropdown myaccount col-lg-6">
+            
             <a class="dropdown-toggle" data-toggle="dropdown">
               <span class="user-info-image">
-                <i class="far fa-user"></i> my account
+              @if (Auth::check())
+                <i class="far fa-user"></i>{{Auth::user() -> user_name}}
+              @else
+              <i class="far fa-user"></i>My Acount
+              @endif
               </span>
               <span class="caret"></span>
             </a>
+            @if(isset(Auth::user()->user_email))
+              <ul class="dropdown-menu">
+                <li id="register"><a href="{{url('/logout')}}">Logout</a></li>
+              </ul>
+            @else
             <ul class="dropdown-menu">
-              <li id="register"><a href="register">Register</a></li>
-              <li id="login"><a href="">Login</a></li>
+                <li id="register"><a href="{{url('/register')}}">Register</a></li>
+                <li id="login"><a href="{{url('/login')}}">Login</a></li>
             </ul>
+            @endif
           </div>
+           <!-- End login part -->
           <div class="header-cart col-lg-6">
             <div id="cart">
               <!-- <span class="cart-icon"></span> -->

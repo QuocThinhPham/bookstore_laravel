@@ -15,20 +15,21 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('home', function () {
+Route::get('/home', function () {
     return view('home');
 });
 
-Route::get('register', function () {
-    return view('RegisterForm');
-});
+
+//register
+Route::get('/register', 'RegisterController@index');
+Route::post('/register', 'RegisterController@createUser');
 
 
-//test 
-Route::get('/book', function(){
-    
-    $books = \App\Books::find(2)->author();
+//login
+Route::get('/login', 'LoginController@index');
+Route::post('/login', 'LoginController@checkUser');
 
 
-    print_r($books);
-});
+//logout
+Route::get('/logout', 'LoginController@logout');
+

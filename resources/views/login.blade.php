@@ -1,20 +1,24 @@
 @extends("layout.Forms")
 
 @section("content")
-@crlf
+
 <div class="form login">
-  <form action="" method="get" class="form-horizontal">
+  @if (isset($error))
+    <h4 class="alert alert-danger text-center">{{ $error }}</h4>
+  @endif
+<form action="{{url('/login')}}" method="post" class="form-horizontal">
+    @csrf
     <h3>Login</h3>
     <div class="form-group">
-      <label class="control-label col-lg-4">Username</label>
+      <label class="control-label col-lg-4">Email</label>
       <div class="col-lg-8">
-        <input type="text" name="username" id="" class="form-control">
+        <input type="email" name="userEmail" id="" class="form-control">
       </div>
     </div>
     <div class="form-group">
       <label class="control-label col-lg-4">Password</label>
       <div class="col-lg-8">
-        <input type="password" name="pass" id="" class="form-control">
+        <input type="password" name="userPass" id="" class="form-control">
       </div>
     </div>
     <div class="form-group text-center">
