@@ -19,11 +19,13 @@
     <div class="header-nav-wrapper">
       <div class="container">
         <div class="header-nav-left col-lg-2">
-          <div class="logo">
-            <span>T</span>
-            <span>N</span>
-            <span>T</span>
-          </div>
+        <a href="{{url('/home')}}" style="text-decoration: none;">
+            <div class="logo">
+              <span>T</span>
+              <span>N</span>
+              <span>T</span>
+            </div>
+          </a>
         </div>
         <div class="header-nav-right col-lg-4 col-lg-offset-6">
         <!-- login part -->
@@ -32,7 +34,7 @@
             <a class="dropdown-toggle" data-toggle="dropdown">
               <span class="user-info-image">
               @if (Auth::check())
-                <i class="far fa-user"></i><p>{{Auth::user() -> user_name}}</p>
+                <i class="far fa-user"></i>{{Auth::user() -> user_name}}
               @else
               <i class="far fa-user"></i>My Acount
               @endif
@@ -41,7 +43,10 @@
             </a>
             @if(isset(Auth::user()->user_email))
               <ul class="dropdown-menu">
-                <li id="register"><a href="{{url('/logout')}}">Logout</a></li>
+                  @if(Auth::user()->is_admin)
+                  <li><a href="{{url('/dashboard')}}">Dashboard</a></li> 
+                  @endif
+                <li><a href="{{url('/logout')}}">Logout</a></li> 
               </ul>
             @else
             <ul class="dropdown-menu">

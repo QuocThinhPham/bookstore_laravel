@@ -13,13 +13,13 @@
     <div class="form-group">
       <label class="control-label col-lg-4">Email</label>
       <div class="col-lg-8">
-        <input type="email" name="userEmail" id="" class="form-control">
+        <input type="email" name="userEmail" id="" class="form-control" required>
       </div>
     </div>
     <div class="form-group">
       <label class="control-label col-lg-4">Password</label>
       <div class="col-lg-8">
-        <input type="password" name="userPass" id="" class="form-control">
+        <input type="password" name="userPass" id="" class="form-control" required>
       </div>
     </div>
     <div class="form-group text-center">

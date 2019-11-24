@@ -11,6 +11,7 @@ class UsersSeedTable extends Seeder
      */
     public function run()
     {
+        DB::table('users')->delete();
         Users::create(array(
             'user_name' => 'Phan Trung Naem',
             'user_email' => '1@gmail.com',

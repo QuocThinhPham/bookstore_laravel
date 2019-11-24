@@ -1,0 +1,60 @@
+[33mcommit fda8bc4c0d82947538786d2891c95bc883b68ead[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/login[m[33m)[m
+Merge: 862be3d 6c4d776
+Author: huuthinh2569 <huuthinh12a2@gmail.com>
+Date:   Sun Nov 24 10:32:47 2019 +0700
+
+    fix bug login
+
+[33mcommit 862be3d35dd560d6244a228c4922d7925bed1c4b[m
+Author: huuthinh2569 <huuthinh12a2@gmail.com>
+Date:   Sun Nov 24 09:38:39 2019 +0700
+
+    a
+
+[33mcommit 6c4d776f2e24b21a4ef41e09a57b9f16141fcfd3[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Naem <anomynous992@gmail.com>
+Date:   Sat Nov 23 21:33:41 2019 +0700
+
+    add login and register functions
+
+[33mcommit 42ccf96cf39afa8fd987b556be71c2bb5b5b2ce2[m
+Author: huuthinh2569 <huuthinh12a2@gmail.com>
+Date:   Sat Nov 23 10:13:42 2019 +0700
+
+    test new
+
+[33mcommit cea6b5c7417199828ec4acd300f31763f9c801de[m
+Author: = <=>
+Date:   Sat Nov 23 09:00:32 2019 +0700
+
+    config psw input
+
+[33mcommit e478e529bfbe3fbc4444521d32c14dd0c29ec9ad[m
+Author: = <=>
+Date:   Sat Nov 23 08:57:07 2019 +0700
+
+    config login form
+
+[33mcommit 3f6d8f6042d3ccd8ac9170c8bb1ee24612edbb90[m
+Author: Naem <anomynous992@gmail.com>
+Date:   Fri Nov 22 23:19:44 2019 +0700
+
+    Add some model and relationship
+
+[33mcommit 1a1e9d4fc14f8bc5bdd8f2f65c2ddb933e0cf564[m
+Author: huuthinh2569 <huuthinh12a2@gmail.com>
+Date:   Fri Nov 22 11:04:02 2019 +0700
+
+    test login
+
+[33mcommit 2a2928c72bbdf0d54ba3c905a16ea4abf7b93585[m
+Author: = <=>
+Date:   Fri Nov 22 09:21:22 2019 +0700
+
+    config view
+
+[33mcommit 7a44da592149e065183bc519404077873f0f7e54[m
+Author: = <=>
+Date:   Thu Nov 21 13:21:01 2019 +0700
+
+    create-project

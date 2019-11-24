@@ -36,7 +36,7 @@ class LoginController extends Controller
         }
         else 
         {
-            $error = "Tài khoản không tồn tại.";
+            $error = "Email hoặc mật khẩu không khớp.";
             return view('login', compact('error'));
         }
 
