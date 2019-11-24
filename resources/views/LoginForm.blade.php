@@ -20,6 +20,9 @@
     <div class="form-group text-center">
       <button type="submit" class="btn btn-primary">Login</button>
     </div>
+    @if(isset($error))
+    <h1>{{ $error }}</h1>
+    @endif
   </form>
 </div>
 @endsection

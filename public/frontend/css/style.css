@@ -140,6 +140,10 @@ body {
     padding: 1.2rem;
 }
 
+.common-home .container{
+    overflow: scroll;
+}
+
 .content {
     position: relative;
     top: 20px;

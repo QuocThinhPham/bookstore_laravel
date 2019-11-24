@@ -12,13 +12,11 @@ class LoginController extends Controller
         $pass = $request->input('password');
         if($user == "thinh123" && $pass == "123")
         {
-            echo 'thanh cong';
             return view('home');
         }
         else
         {
-            echo 'that bai';
-            return view('LoginForm'); 
+            return view('LoginForm',['error' => 'Dang Nhap That Bai']); 
         }
     }
 }
