@@ -12,15 +12,21 @@
 */
 
 
-Route::get('home', function () {
+Route::get('/home', function () {
     return view('home');
 });
 
-Route::get('register', function () {
-    return view('RegisterForm');
-});
-Route::get('login',function(){
-    return view('LoginForm');
-});
-Route::post('login-form',['uses'=> 'LoginController@CheckUser']);
-Route::resource('books','BooksController');
+
+//register
+Route::get('/register', 'RegisterController@index');
+Route::post('/register', 'RegisterController@createUser');
+
+
+//login
+Route::get('/login', 'LoginController@index');
+Route::post('/login', 'LoginController@checkUser');
+
+
+//logout
+Route::get('/logout', 'LoginController@logout');
+

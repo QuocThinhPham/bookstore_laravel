@@ -1,22 +1,50 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\login;
+use App\User;
+use Vallidator;
+use Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+
 
 class LoginController extends Controller
 {
-    public function CheckUser(Request $request)
+    //
+
+    public function index()
     {
-        $user = $request->input('username');
-        $pass = $request->input('password');
-        if($user == "thinh123" && $pass == "123")
+        return view('login');
+    }
+
+    public function checkUser(Request $req)
+    {
+
+        $this->validate($req, [
+            'userEmail' => 'required|email',
+            'userPass' => 'required|alphaNum|min:3'
+        ]);
+
+        $user_data = array(
+            'user_email'  => $req-> userEmail,
+            'password' => $req-> userPass
+        );
+        
+        if(Auth::attempt($user_data))
         {
-            return view('home');
+            return redirect('/home');
         }
-        else
+        else 
         {
-            return view('LoginForm',['error' => 'Dang Nhap That Bai']); 
+            $error = "Tài khoản không tồn tại.";
+            return view('login', compact('error'));
         }
+
+        
+    }
+    public function logout()
+    {
+            Auth::logout();
+            return redirect('/home');
     }
 }
