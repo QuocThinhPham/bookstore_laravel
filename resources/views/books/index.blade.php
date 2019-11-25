@@ -7,11 +7,11 @@
               <div class="product-item col-lg-3">
                 <div>
                   <div class="img-product">
-                      <img src="frontend/images/{{$book->Sach_img}}">
+                      <img src="frontend/images/{{$book->book_img}}">
                   </div>
                   <div class="details-product">
-                    <h3><a href="/books/{{$book->Maloai}}">{{$book->Tensach}}</a></h3>
-                    <h5 class="price-product">{{$book->Gia}}</h5>
+                    <h3><a href="/books/{{$book->book_id}}">{{$book->book_name}}</a></h3>
+                    <h5 class="price-product">{{$book->book_price}}</h5>
                   </div>
                 </div>
                 <div class="button-group">

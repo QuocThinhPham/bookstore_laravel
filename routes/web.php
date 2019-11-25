@@ -30,3 +30,5 @@ Route::post('/login', 'LoginController@checkUser');
 //logout
 Route::get('/logout', 'LoginController@logout');
 
+//books
+Route::get('/books', 'BooksController@index');
