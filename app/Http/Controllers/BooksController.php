@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 use App\Books;
+use App\Cart;
 use Illuminate\Http\Request;
-
+use Session;
 class BooksController extends Controller
 {
     /**
@@ -14,10 +15,27 @@ class BooksController extends Controller
     public function index()
     {
         //
-        $books = Books::all(); // pagination
+        $books = Books::all();
         return view('books/index')->with('books', $books);
     }
 
+    public function getAddToCart(Request $req, $id)
+    {
+        $book = Books::find($id);
+        $oldCart = Session::has('cart') ? Session::get('cart') : null;
+        if(!$cart)
+        {
+            $cart = new Cart($oldCart );
+        }
+
+        $cart->add($book, $book->book_id);
+        if(Session::has('cart'))
+        {
+            $req->session()->forget('cart');
+        }
+        Session::put('cart', $cart);
+        return redirect('/books');
+    }
     /**
      * Show the form for creating a new resource.
      *

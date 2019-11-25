@@ -35,3 +35,10 @@ Route::get('/logout', 'LoginController@logout');
 
 //admin page route
 Route::get('/dashboard', 'AdminController@index');
+
+//book
+Route::get('/books', 'BooksController@index');
+
+
+//add to cart
+Route::get('/cart/{id}', 'BooksController@getAddToCart');

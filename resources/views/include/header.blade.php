@@ -63,7 +63,7 @@
                 <span id="cart-title">
                   <i class="fas fa-shopping-cart"></i> my cart
                 </span>
-                <span id="cart-total">(0)</span>
+                <span id="cart-total">{{ Session::has('cart') ? Session::get('cart')->totalAmount : 0}}</span>
               </a>
             </div>
           </div>
