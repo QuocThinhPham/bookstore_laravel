@@ -32,6 +32,5 @@ Route::post('/login', 'LoginController@checkUser');
 //logout
 Route::get('/logout', 'LoginController@logout');
 
-
-//admin page route
-Route::get('/dashboard', 'AdminController@index');
+//books
+Route::get('/books', 'BooksController@index');
