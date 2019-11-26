@@ -7,7 +7,7 @@
     <div class="category-content">
       <ul id="category-menu">
         <li class="dropdown">
-          <a href="/books" class="dropdown-btn">
+          <a href="{{ asset('books') }}" class="dropdown-btn">
             <label for="">our store</label> <span class="glyphicon glyphicon-chevron-right"></span>
           </a>
         </li>
