@@ -22,7 +22,7 @@ class Books extends Model
 
     public function author()
     {
-        return $this->belongsToMany('App\Authors');
+        return $this->belongsTo('App\Authors');
     }
 
 

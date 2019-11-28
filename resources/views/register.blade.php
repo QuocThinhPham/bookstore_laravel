@@ -1,11 +1,13 @@
 @extends("layout.Forms")
 @section("content")
 
+@if(isset($info))
+    <div class="hideMess" id="alert-mess">
+      <h3>Đăng ký thành công đăng nhập nào.</h3>
+    </div>
+@endif
 <!-- Register -->
 <div class="form form-customer">
-  @if(isset($info))
-  <p class="alert alert-success text-center">{{$info}}</p>
-  @endif
   <form action="{{url('/register')}}" method="post" class="form-horizontal">
     @csrf
     <h3>Register</h3>

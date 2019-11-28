@@ -65,6 +65,7 @@
 
 <script src="{{('frontend/fontawesome/all.js')}}"></script>
 <script src="{{('frontend/js/app.js')}}"></script>
+<script src="{{('frontend/js/animation.js')}}"></script>
 </body>
 
 </html>

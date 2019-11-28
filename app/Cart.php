@@ -23,15 +23,15 @@ class Cart
         $storedItem = ['amount' => 0, 'price' => $item->price, 'item' => $item];
         if($this->items)
         {
-            if(array_key_exists($id, $item))
+            if(array_key_exists($id, $this->items))
             {
                 $storedItem = $this->items[$id];
             }
         }
         $storedItem['amount']++;
-        $storedItem['price'] = $item->price * $storedItem['amount'];
+        $storedItem['price'] = $item->book_price * $storedItem['amount'];
         $this->items[$id] = $storedItem;
         $this->totalAmount++;  
-        $this->totalPrice += $item->price;
+        $this->totalPrice += $item->book_price;
     }
 }

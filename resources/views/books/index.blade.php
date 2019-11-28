@@ -15,8 +15,8 @@
                   </div>
                 </div>
                 <div class="button-group">
-                {{-- <a href="/cart/{{$book->book_id}}"><i class="fas fa-cart-plus"></i></a> --}}
-                <a href="/books"><i class="fas fa-cart-plus"></i></a>
+                <a href="/cart/{{$book->book_id}}"><i class="fas fa-cart-plus"></i></a>
+                {{-- <a href="/books"><i class="fas fa-cart-plus"></i></a> --}}
                   <button class="quickview"><i class="far fa-eye"></i></button>
                   <button class="wishlist"><i class="far fa-heart"></i></button>
                 </div>

@@ -69,3 +69,4 @@ Route::get('/books', 'BooksController@index');
 
 //add to cart
 Route::get('/cart/{id}', 'BooksController@getAddToCart');
+Route::get('/test', 'BooksController@getCart');

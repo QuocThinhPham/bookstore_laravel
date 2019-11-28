@@ -10,6 +10,7 @@
 
 body {
     background: #f4f4f4;
+    overflow-x: hidden;
 }
 
 
@@ -484,4 +485,25 @@ div.form .form-group .control-label {
 
 .btn.btn-primary {
     font-size: 1.7rem;
+}
+
+/* animation alert */
+
+#alert-mess {
+    position: absolute;
+    right: 0;
+    top: 100px;
+    transition: all 0.7s;
+    background: #4de93f;
+    padding: 10px;
+    color: #f1f1f1;
+}
+
+.hideMess {
+    transform: translateX(401px);
+    
+}
+
+.showMess {
+    transform: translateX(0);
 }
