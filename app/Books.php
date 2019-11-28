@@ -8,7 +8,6 @@ class Books extends Model
 {
     protected $table = 'books';
     protected $primaryKey = 'book_id';
-    protected $dateFormat = 'd-m-Y';
     
 
     public function type()
@@ -23,7 +22,7 @@ class Books extends Model
 
     public function author()
     {
-        return $this->belongsToMany('App\Authors');
+        return $this->belongsTo('App\Authors');
     }
 
 

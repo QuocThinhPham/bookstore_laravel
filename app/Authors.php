@@ -9,9 +9,10 @@ class Authors extends Model
     //
     protected $table = 'authors';
     protected $primaryKey = 'author_id';
-
+    public $timestamps = false;
+    
     public function book()
     {
-        return $this->belongsToMany('App\Books');
+        return $this->hasMany('App\Books');
     }
 }

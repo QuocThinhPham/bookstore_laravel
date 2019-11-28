@@ -59,11 +59,11 @@
           <div class="header-cart col-lg-6">
             <div id="cart">
               <!-- <span class="cart-icon"></span> -->
-              <a>
+            <a href="test">
                 <span id="cart-title">
                   <i class="fas fa-shopping-cart"></i> my cart
                 </span>
-                <span id="cart-total">(0)</span>
+                <span class="badge" id="cart-total">{{ Session::has('cart') ? Session::get('cart')->totalAmount : 0}}</span>
               </a>
             </div>
           </div>
