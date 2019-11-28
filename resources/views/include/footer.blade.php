@@ -57,6 +57,7 @@
     </div>
   </div>
 </footer>
+</body>
 <!-- End Of Footer -->
 <!-- jQuery -->
 <script src="{{('frontend/js/jquery-3.4.1.min.js')}}"></script>

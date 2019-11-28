@@ -19,7 +19,7 @@
     <div class="header-nav-wrapper">
       <div class="container">
         <div class="header-nav-left col-lg-2">
-        <a href="{{url('/home')}}" style="text-decoration: none;">
+          <a href="{{url('/home')}}" style="text-decoration: none;">
             <div class="logo">
               <span>T</span>
               <span>N</span>
@@ -27,36 +27,35 @@
             </div>
           </a>
         </div>
-        <div class="header-nav-right col-lg-4 col-lg-offset-6">
-        <!-- login part -->
-          <div class="dropdown myaccount col-lg-6">
-            
+        <div class="header-nav-right col-lg-5 col-lg-offset-5">
+          <!-- login part -->
+          <div class="dropdown myaccount col-lg-6 col-lg-offset-2">
             <a class="dropdown-toggle" data-toggle="dropdown">
               <span class="user-info-image">
-              @if (Auth::check())
+                @if (Auth::check())
                 <i class="far fa-user"></i>{{Auth::user() -> user_name}}
-              @else
-              <i class="far fa-user"></i>My Acount
-              @endif
+                @else
+                <i class="far fa-user"></i>My Acount
+                @endif
               </span>
               <span class="caret"></span>
             </a>
             @if(isset(Auth::user()->user_email))
-              <ul class="dropdown-menu">
-                  @if(Auth::user()->is_admin)
-                  <li><a href="{{url('/dashboard')}}">Dashboard</a></li> 
-                  @endif
-                <li><a href="{{url('/logout')}}">Logout</a></li> 
-              </ul>
+            <ul class="dropdown-menu">
+              @if(Auth::user()->is_admin)
+              <li><a href="{{url('dashboard')}}">Dashboard</a></li>
+              @endif
+              <li><a href="{{url('logout')}}">Logout</a></li>
+            </ul>
             @else
             <ul class="dropdown-menu">
-                <li id="register"><a href="{{url('/register')}}">Register</a></li>
-                <li id="login"><a href="{{url('/login')}}">Login</a></li>
+              <li id="register"><a href="{{url('register')}}">Register</a></li>
+              <li id="login"><a href="{{url('login')}}">Login</a></li>
             </ul>
             @endif
           </div>
-           <!-- End login part -->
-          <div class="header-cart col-lg-6">
+          <!-- End login part -->
+          <div class="header-cart col-lg-4">
             <div id="cart">
               <!-- <span class="cart-icon"></span> -->
               <a>

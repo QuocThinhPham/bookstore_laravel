@@ -5,7 +5,7 @@
   <base href="{{ asset('layout/backend') }}/">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>@yield('title') | Vietpro shop</title>
+  <title>@yield('title') | Amazon</title>
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/datepicker3.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
@@ -17,13 +17,13 @@
   <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container-fluid">
       <div class="navbar-header">
-        <a class="navbar-brand" href="{{ asset('admin/home') }}">TNT</a>
+        <a class="navbar-brand" href="{{ asset('admin/home') }}">Amazon</a>
         <ul class="user-menu">
           <li class="dropdown pull-right">
             <a href="#" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown">
               <svg class="glyph stroked male-user">
                 <use xlink:href="#stroked-male-user"></use>
-              </svg> {{Auth::user()->email}} <span class="caret"></span>
+              </svg> {{Auth::user()->user_name}} <span class="caret"></span>
             </a>
             <ul class="dropdown-menu" aria-labelledby="dropdown">
               <li class="dropdown-item">
@@ -44,7 +44,7 @@
   <div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
     <ul class="nav menu">
       <li role="presentation" class="divider"></li>
-      <li class="active"><a href="{{ asset('dashboard/home') }}"><svg class="glyph stroked dashboard-dial">
+      <li class="active"><a href="{{ asset('dashboard') }}"><svg class="glyph stroked dashboard-dial">
             <use xlink:href="#stroked-dashboard-dial"></use>
           </svg> Trang chủ</a></li>
       <li><a href="{{ asset('dashboard/product') }}"><svg class="glyph stroked calendar">
@@ -53,7 +53,7 @@
       <li><a href="{{ asset('dashboard/category') }}"><svg class="glyph stroked line-graph">
             <use xlink:href="#stroked-line-graph"></use>
           </svg> Danh mục sách</a></li>
-      <li><a href=""><svg class="glyph stroked calendar">
+      <li><a href="{{ asset('dashboard/publisher') }}"><svg class="glyph stroked calendar">
             <use xlink:href="#stroked-calendar"></use>
           </svg> Nhà xuất bản</a></li>
       <li><a href=""><svg class="glyph stroked line-graph">

@@ -96,7 +96,7 @@
 									Không: <input type="radio" checked name="featured" value="0">
 								</div>
 								<input type="submit" name="submit" value="Thêm" class="btn btn-primary">
-								<a href="{{ asset('admin/product')}}" class="btn btn-danger">Hủy bỏ</a>
+								<a href="{{ asset('dashboard/product')}}" class="btn btn-danger">Hủy bỏ</a>
 							</div>
 						</div>
 						{{ csrf_field() }}

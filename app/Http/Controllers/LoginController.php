@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\User;
 use Vallidator;
 use Auth;
@@ -26,25 +27,20 @@ class LoginController extends Controller
         ]);
 
         $user_data = array(
-            'user_email'  => $req-> userEmail,
-            'password' => $req-> userPass
+            'user_email'  => $req->userEmail,
+            'password' => $req->userPass
         );
-        
-        if(Auth::attempt($user_data))
-        {
+
+        if (Auth::attempt($user_data)) {
             return redirect('/home');
-        }
-        else 
-        {
+        } else {
             $error = "Email hoặc mật khẩu không khớp.";
             return view('login', compact('error'));
         }
-
-        
     }
     public function logout()
     {
-            Auth::logout();
-            return redirect('/home');
+        Auth::logout();
+        return redirect('home');
     }
 }

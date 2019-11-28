@@ -55,10 +55,10 @@
 								<div class="form-group">
 									<label>Danh mục</label>
 									<select required name="cate" class="form-control">
-										@if(count($catelist) > 0)
-										@foreach($catelist as $cate)
-										<option value="{{$cate->cate_id}}" @if($product->book_cate == $cate->cate_id) selected @endif>
-											{{$cate->cate_name}}
+										@if(count($typelist) > 0)
+										@foreach($typelist as $type)
+										<option value="{{$type->type_id}}" @if($product->book_type == $type->type_id) selected @endif>
+											{{$type->type_name}}
 										</option>
 										@endforeach
 										@else

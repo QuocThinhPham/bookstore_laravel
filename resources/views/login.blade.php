@@ -1,7 +1,5 @@
-@extends("layout.Forms")
-
-@section("content")
-
+@extends('layout.master')
+@section('content')
 <div class="form login">
   @if (isset($error))
   <h4 class="alert alert-danger text-center">{{ $error }}</h4>
@@ -13,13 +11,13 @@
     <div class="form-group">
       <label class="control-label col-lg-4">Email</label>
       <div class="col-lg-8">
-        <input type="email" name="userEmail" id="" class="form-control" required>
+        <input type="email" name="userEmail" id="" class="form-control" autocomplete="off" required>
       </div>
     </div>
     <div class="form-group">
       <label class="control-label col-lg-4">Password</label>
       <div class="col-lg-8">
-        <input type="password" name="userPass" id="" class="form-control" required>
+        <input type="password" name="userPass" id="" class="form-control" autocomplete="off" required>
       </div>
     </div>
     <div class="form-group text-center">

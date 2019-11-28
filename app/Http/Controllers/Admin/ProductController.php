@@ -52,7 +52,7 @@ class ProductController extends Controller
     public function getEditProduct($id)
     {
         $data['product'] = Books::find($id);
-        $data['catelist'] = Types::all();
+        $data['typelist'] = Types::all();
         $data['publisherlist'] = Publishers::all();
         $data['authorlist'] = Authors::all();
 
