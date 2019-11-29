@@ -11,7 +11,7 @@ class UserController extends Controller
     //
     public function getUser()
     {
-        $data['userlist'] = Users::all()->where('is_admin', '=', '0');
+        $data['userlist'] = Users::all();
         return view('backend.user', $data);
     }
 }

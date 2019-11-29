@@ -7,11 +7,29 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="{{('frontend/css/style.css')}}">
+  <link rel="stylesheet" href="{{ url('frontend/css/style.css') }}">
   <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="{{('frontend/bootstrap/dist/css/bootstrap.min.css')}}">
+  <link rel="stylesheet" href="{{ url('frontend/bootstrap/dist/css/bootstrap.min.css') }}">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="{{('frontend/fontawesome/all.css')}}">
+  <link rel="stylesheet" href="{{ url('frontend/fontawesome/all.css') }}">
+  <script type="text/javascript">
+    $('document').ready(function() {
+      $('.add-cart').click(function() {
+        var id = $(this).attr('id');
+        $.ajax({
+          type: 'POST',
+          url: window.location.origin + "/Bookstore/public/cart",
+          data: {
+            'id': id
+          }
+          success: function(data) {
+            $('#cart-total').html(data);
+          }
+
+        });
+      });
+    });
+  </script>
 </head>
 
 <body>
@@ -21,15 +39,13 @@
         <div class="header-nav-left col-lg-2">
           <a href="{{url('/home')}}" style="text-decoration: none;">
             <div class="logo">
-              <span>T</span>
-              <span>N</span>
-              <span>T</span>
+              <span>AMAZON</span>
             </div>
           </a>
         </div>
         <div class="header-nav-right col-lg-5 col-lg-offset-5">
           <!-- login part -->
-          <div class="dropdown myaccount col-lg-6 col-lg-offset-2">
+          <div class="dropdown myaccount col-lg-6">
             <a class="dropdown-toggle" data-toggle="dropdown">
               <span class="user-info-image">
                 @if (Auth::check())
@@ -64,6 +80,12 @@
                 </span>
                 <span id="cart-total">{{ Session::has('cart') ? Session::get('cart')->totalAmount : 0}}</span>
               </a>
+            </div>
+          </div>
+          <div class="header-cart col-lg-2">
+            <div>
+              <!-- <span class="cart-icon"></span> -->
+              <a href="{{ asset('dashboard/login') }}">Admin</a>
             </div>
           </div>
         </div>

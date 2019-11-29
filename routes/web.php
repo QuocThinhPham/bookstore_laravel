@@ -47,10 +47,11 @@ Route::get('cart/{id}', 'BooksController@getAddToCart');
 
 // Route -> Admin
 Route::group(['prefix' => 'dashboard'], function () {
-    Route::get('/', 'AdminController@index');
     Route::group(['namespace' => 'Admin'], function () {
         Route::get('login', 'LoginController@getLogin');
         Route::post('login', 'LoginController@postLogin');
+
+        Route::get('home', 'AdminController@index');
 
         Route::get('user', 'UserController@getUser');
         // Route -> Category
@@ -81,7 +82,7 @@ Route::group(['prefix' => 'dashboard'], function () {
             Route::post('/', 'PublisherController@postPublisher');
 
             Route::get('edit/{id}', 'PublisherController@getEditPublisher');
-            Route::get('edit/{id}', 'PublisherController@postEditPublisher');
+            Route::post('edit/{id}', 'PublisherController@postEditPublisher');
 
             Route::get('delete/{id}', 'PublisherController@getDeletePublisher');
         });

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBooksPublishersTable extends Migration
+class CreateAdminTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,10 @@ class CreateBooksPublishersTable extends Migration
      */
     public function up()
     {
-        Schema::create('books_publishers', function (Blueprint $table) {
-            $table->unsignedBigInteger('book_id');
-            $table->unsignedBigInteger('publisher_id');
+        Schema::create('admin', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('email');
+            $table->string('password');
             $table->timestamps();
         });
     }
@@ -27,6 +28,6 @@ class CreateBooksPublishersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('books_publishers');
+        Schema::dropIfExists('admin');
     }
 }

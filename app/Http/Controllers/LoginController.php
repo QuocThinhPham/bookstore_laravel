@@ -39,19 +39,6 @@ class LoginController extends Controller
         }
     }
 
-    public function postLogin(Request $request)
-    {
-        $arr = [
-            'email' => $request->email,
-            'password' => $request->password
-        ];
-        if (Auth::attempt($arr)) {
-            return redirect()->intended('home');
-        } else {
-            return back()->withInput()->with('error', 'Tài khoản hoặc mật khẩu chưa đúng');
-        }
-    }
-
     public function logout()
     {
         Auth::logout();

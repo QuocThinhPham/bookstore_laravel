@@ -23,7 +23,7 @@
             <a href="#" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown">
               <svg class="glyph stroked male-user">
                 <use xlink:href="#stroked-male-user"></use>
-              </svg> {{Auth::user()->user_name}} <span class="caret"></span>
+              </svg> <span class="caret"></span>
             </a>
             <ul class="dropdown-menu" aria-labelledby="dropdown">
               <li class="dropdown-item">
@@ -44,7 +44,7 @@
   <div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
     <ul class="nav menu">
       <li role="presentation" class="divider"></li>
-      <li class="active"><a href="{{ asset('dashboard') }}"><svg class="glyph stroked dashboard-dial">
+      <li class="active"><a href="{{ asset('dashboard/home') }}"><svg class="glyph stroked dashboard-dial">
             <use xlink:href="#stroked-dashboard-dial"></use>
           </svg> Trang chủ</a></li>
       <li><a href="{{ asset('dashboard/user') }}"><svg class="glyph stroked line-graph">

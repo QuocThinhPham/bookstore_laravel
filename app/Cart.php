@@ -3,7 +3,7 @@
 namespace App;
 
 
-class Cart 
+class Cart
 {
     public $items = null;
     public $totalAmount = 0;
@@ -11,27 +11,25 @@ class Cart
 
     public function __construct($oldCart)
     {
-        if($oldCart)
-        {
+        if ($oldCart) {
             $this->items = $oldCart->items;
-            $this->totalAmount = $oldCart->totalAmount; 
+            $this->totalAmount = $oldCart->totalAmount;
             $this->totalPrice = $oldCart->totalPrice;
         }
     }
+
     public function add($item, $id)
     {
         $storedItem = ['amount' => 0, 'price' => $item->price, 'item' => $item];
-        if($this->items)
-        {
-            if(array_key_exists($id, $item))
-            {
+        if ($this->items) {
+            if (array_key_exists($id, $this->items)) {
                 $storedItem = $this->items[$id];
             }
         }
         $storedItem['amount']++;
         $storedItem['price'] = $item->price * $storedItem['amount'];
         $this->items[$id] = $storedItem;
-        $this->totalAmount++;  
+        $this->totalAmount++;
         $this->totalPrice += $item->price;
     }
 }

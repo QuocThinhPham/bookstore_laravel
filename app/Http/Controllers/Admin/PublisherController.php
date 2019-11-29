@@ -30,8 +30,14 @@ class PublisherController extends Controller
         return view('backend.editpublisher', $data);
     }
 
-    public function postEditPublisher($id)
-    { }
+    public function postEditPublisher(Request $request, $id)
+    {
+        $publisher = Publishers::find($id);
+        $publisher->publisher_name = $request->name;
+
+        $publisher->save();
+        return redirect('dashboard/publisher');
+    }
 
     public function getDeletePublisher($id)
     {

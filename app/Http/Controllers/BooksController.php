@@ -6,6 +6,7 @@ use App\Books;
 use App\Cart;
 use Illuminate\Http\Request;
 use Session;
+use Auth;
 
 class BooksController extends Controller
 {
@@ -24,21 +25,22 @@ class BooksController extends Controller
     public function post()
     { }
 
-    // public function getAddToCart(Request $req, $id)
-    // {
-    //     $book = Books::find($id);
-    //     $oldCart = Session::has('cart') ? Session::get('cart') : null;
-    //     if (!$cart) {
-    //         $cart = new Cart($oldCart);
-    //     }
+    public function getAddToCart(Request $req, $id)
+    {
+        if (!Auth::check()) {
+            return redirect()->intended('login');
+        }
+        $book = Books::find($id);
+        $oldCart = Session::has('cart') ? Session::get('cart') : null;
+        $cart = new Cart($oldCart);
 
-    //     $cart->add($book, $book->book_id);
-    //     if (Session::has('cart')) {
-    //         $req->session()->forget('cart');
-    //     }
-    //     Session::put('cart', $cart);
-    //     return redirect('/books');
-    // }
+        $cart->add($book, $book->book_id);
+        if (Session::has('cart')) {
+            $req->session()->forget('cart');
+        }
+        Session::put('cart', $cart);
+        return redirect('/books');
+    }
     /**
      * Show the form for creating a new resource.
      *

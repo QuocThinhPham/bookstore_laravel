@@ -8,22 +8,20 @@ class Books extends Model
 {
     protected $table = 'books';
     protected $primaryKey = 'book_id';
-    
+
 
     public function type()
-    {   
-        return $this->belongsTo('App\Types');
+    {
+        return $this->belongsTo('App\Types', 'book_type');
     }
 
     public function publisher()
     {
-        return $this->belongsToMany('App\Publishers');
+        return $this->belongsToMany('App\Publishers', 'book_publisher');
     }
 
     public function author()
     {
-        return $this->belongsToMany('App\Authors');
+        return $this->belongsTo('App\Authors', 'book_author');
     }
-
-
 }

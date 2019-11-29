@@ -20,6 +20,7 @@ class RegisterController extends Controller
         $user->user_name = $req->username;
         $user->user_phone_number = $req->phone_number;
         $user->user_email = $req->email;
+        $user->user_address = $req->address;
         $user->user_password = Hash::make($req->password);
         $user->save();
         $info = 'Đăng ký thành công. Vui lòng đăng nhập để tiếp tục';

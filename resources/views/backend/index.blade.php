@@ -26,7 +26,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-xs-12 col-md-6 col-lg-3">
+		<!-- <div class="col-xs-12 col-md-6 col-lg-3">
 			<div class="panel panel-orange panel-widget">
 				<div class="row no-padding">
 					<div class="col-sm-3 col-lg-5 widget-left">
@@ -40,7 +40,7 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</div> -->
 		<div class="col-xs-12 col-md-6 col-lg-3">
 			<div class="panel panel-teal panel-widget">
 				<div class="row no-padding">
@@ -72,20 +72,6 @@
 			</div>
 		</div>
 	</div>
-	<!--/.row-->
-	<!-- 
-	<div class="row">
-		<div class="col-md-12">
-			<div class="panel panel-red">
-				<div class="panel-heading dark-overlay"><svg class="glyph stroked calendar">
-						<use xlink:href="#stroked-calendar"></use>
-					</svg>Lịch</div>
-				<div class="panel-body">
-					<div id="calendar"></div>
-				</div>
-			</div>
-		</div>
-	</div> -->
 	<!--/.row-->
 </div>
 <!--/.main-->

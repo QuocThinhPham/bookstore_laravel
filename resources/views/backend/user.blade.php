@@ -22,6 +22,7 @@
                     <th width="30%">Tên người dùng</th>
                     <th>Email</th>
                     <th>Số điện thoại</th>
+                    <th>Địa chỉ</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -31,6 +32,7 @@
                     <td>{{$user->user_name}}</td>
                     <td>{{ $user->user_email }}</td>
                     <td>{{ $user->user_phone_number }}</td>
+                    <td>{{ $user->user_address }}</td>
                   </tr>
                   @endforeach
                 </tbody>

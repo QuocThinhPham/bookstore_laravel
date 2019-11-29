@@ -60,12 +60,12 @@
 </body>
 <!-- End Of Footer -->
 <!-- jQuery -->
-<script src="{{('frontend/js/jquery-3.4.1.min.js')}}"></script>
+<script src="{{ url('frontend/js/jquery-3.4.1.min.js')}}"></script>
 <!-- Bootstrap JS -->
-<script src="{{('frontend/bootstrap/dist/js/bootstrap.min.js')}}"></script>
+<script src="{{ url('frontend/bootstrap/dist/js/bootstrap.min.js')}}"></script>
 
-<script src="{{('frontend/fontawesome/all.js')}}"></script>
-<script src="{{('frontend/js/app.js')}}"></script>
+<script src="{{ url('frontend/fontawesome/all.js')}}"></script>
+<script src="{{ url('frontend/js/app.js')}}"></script>
 </body>
 
 </html>
