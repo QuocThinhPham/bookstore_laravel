@@ -25,23 +25,25 @@
 										<th width="30%">Tên Sản phẩm</th>
 										<th>Giá sản phẩm</th>
 										<th width="20%">Ảnh sản phẩm</th>
+										<th>Tác giả</th>
 										<th>Danh mục</th>
 										<th>Tùy chọn</th>
 									</tr>
 								</thead>
 								<tbody>
-									@foreach($productlist as $product)
+									@foreach($productlist as $book)
 									<tr>
-										<td>{{$product->book_id}}</td>
-										<td>{{$product->book_name}}</td>
-										<td>{{number_format($product->book_price,0,',','.')}} VNĐ</td>
+										<td>{{$book->book_id}}</td>
+										<td>{{$book->book_name}}</td>
+										<td>{{number_format($book->book_price,0,',','.')}} VNĐ</td>
 										<td>
-											<img width="150px" src="{{ asset('storage/app/avatar/'.$product->book_img) }}" class="thumbnail">
+											<img width="150px" height="100px" src="{{ asset('../storage/app/avatar/'.$book->book_img) }}" class="thumbnail">
 										</td>
-										<td>{{ $product->type_name }}</td>
+										<td>{{ $book->author->author_name }}</td>
+										<td>{{ $book->type->type_name }}</td>
 										<td>
-											<a href="{{ asset('dashboard/product/edit/'.$product->book_id) }}" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i> Sửa</a>
-											<a onclick="return confirm('Bạn có chắc chắn muốn xoá?')" href="{{ asset('dashboard/product/delete/'.$product->book_id) }}" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Xóa</a>
+											<a href="{{ asset('dashboard/product/edit/'.$book->book_id) }}" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i> Sửa</a>
+											<a onclick="return confirm('Bạn có chắc chắn muốn xoá?')" href="{{ asset('dashboard/product/delete/'.$book->book_id) }}" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Xóa</a>
 										</td>
 									</tr>
 									@endforeach

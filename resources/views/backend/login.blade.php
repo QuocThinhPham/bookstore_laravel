@@ -2,7 +2,7 @@
 <html>
 
 <head>
-	<base href="{{ asset('public/layout/backend') }}/">
+	<base href="{{ asset('layout/backend') }}/">
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Forms</title>
@@ -26,14 +26,13 @@
 				<div class="panel-heading">Log in</div>
 				<div class="panel-body">
 					<form role="form" method="post">
-						{{ csrf_field() }}
 						<fieldset>
 							@include('errors.note')
 							<div class="form-group">
-								<input class="form-control" placeholder="E-mail" name="email" type="email" autofocus="" autocomplete="off" value="{{ old('email') }}">
+								<input class="form-control" placeholder="E-mail" name="email" type="email" autofocus="" value="{{ old('email') }}">
 							</div>
 							<div class="form-group">
-								<input class="form-control" placeholder="Password" name="password" type="password" value="" autocomplete="off">
+								<input class="form-control" placeholder="Password" name="password" type="password">
 							</div>
 							<div class="checkbox">
 								<label>
@@ -42,6 +41,7 @@
 							</div>
 							<input type="submit" class="btn btn-primary" name="submit" value="Đăng nhập">
 						</fieldset>
+						{{ csrf_field() }}
 					</form>
 				</div>
 			</div>

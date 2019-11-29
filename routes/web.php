@@ -11,34 +11,50 @@
 |
 */
 //home routes
+
+
 Route::get('/', function () {
     return view('home');
 });
-Route::get('/home', function () {
+Route::get('home', function () {
     return view('home');
 });
 
+// Route -> User
 
+// Route::group(['prefix' => '']);
 //register
-Route::get('/register', 'RegisterController@index');
-Route::post('/register', 'RegisterController@createUser');
+Route::get('register', 'RegisterController@index');
+Route::post('register', 'RegisterController@createUser');
 
 
 //login
-Route::get('/login', 'LoginController@index');
-Route::post('/login', 'LoginController@checkUser');
+Route::get('login', 'LoginController@index');
+Route::post('login', 'LoginController@checkUser');
+// Route::post('login', 'LoginController@postLogin');
 
 
 //logout
-Route::get('/logout', 'LoginController@logout');
+Route::get('logout', 'LoginController@logout');
 
 
-//admin page route
-// Route::get('/dashboard', 'AdminController@index');
+//book
+Route::get('books', 'BooksController@index');
+
+
+//add to cart
+Route::get('cart/{id}', 'BooksController@getAddToCart');
+
+// Route -> Admin
 Route::group(['prefix' => 'dashboard'], function () {
-    Route::get('/', 'AdminController@index');
-
     Route::group(['namespace' => 'Admin'], function () {
+        Route::get('login', 'LoginController@getLogin');
+        Route::post('login', 'LoginController@postLogin');
+
+        Route::get('home', 'AdminController@index');
+
+        Route::get('user', 'UserController@getUser');
+        // Route -> Category
         Route::group(['prefix' => 'category'], function () {
             Route::get('/', 'CategoryController@getCate');
             Route::post('/', 'CategoryController@postCate');
@@ -48,7 +64,7 @@ Route::group(['prefix' => 'dashboard'], function () {
 
             Route::get('delete/{id}', 'CategoryController@getDeleteCate');
         });
-
+        // Route -> Product
         Route::group(['prefix' => 'product'], function () {
             Route::get('/', 'ProductController@getProduct');
 
@@ -60,19 +76,25 @@ Route::group(['prefix' => 'dashboard'], function () {
 
             Route::get('delete/{id}', 'ProductController@getDeleteProduct');
         });
+
+        Route::group(['prefix' => 'publisher'], function () {
+            Route::get('/', 'PublisherController@getPublisher');
+            Route::post('/', 'PublisherController@postPublisher');
+
+            Route::get('edit/{id}', 'PublisherController@getEditPublisher');
+            Route::post('edit/{id}', 'PublisherController@postEditPublisher');
+
+            Route::get('delete/{id}', 'PublisherController@getDeletePublisher');
+        });
+
+        Route::group(['prefix' => 'author'], function () {
+            Route::get('/', 'AuthorController@getAuthor');
+            Route::post('/', 'AuthorController@postAuthor');
+
+            Route::get('edit/{id}', 'AuthorController@getEditAuthor');
+            Route::post('edit/{id}', 'AuthorController@postEditAuthor');
+
+            Route::get('delete/{id}', 'AuthorController@getDeleteAuthor');
+        });
     });
 });
-
-//book
-Route::get('/books', 'BooksController@index');
-
-
-//add to cart
-Route::get('/cart', 'BooksController@getAddToCart');
-Route::get('/test', 'BooksController@getCart');
-Route::get('/checkout', function() {
-    return view('checkout');
-});
-// Route::get('/test2', function(){
-//     return 69;
-// });

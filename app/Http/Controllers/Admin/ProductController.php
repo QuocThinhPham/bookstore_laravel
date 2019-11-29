@@ -16,10 +16,8 @@ class ProductController extends Controller
     //
     public function getProduct()
     {
-        $data['productlist'] = DB::table('books')
-            ->join('types', 'books.type_id', '=', 'types.type_id')
-            ->orderBy('book_id', 'desc')->get();
-        return view('backend.product', $data);
+        $productlist = Books::all();
+        return view('backend.product', compact('productlist'));
     }
 
     public function getAddProduct()
@@ -37,11 +35,11 @@ class ProductController extends Controller
         $product = new Books;
         $product->book_name = $request->name;
         $product->book_price = $request->price;
-        $product->book_amount = $request->amount;
+        $product->book_status = $request->status;
         $product->book_img = $filename;
-        $product->publisher_id = $request->publisher;
-        $product->author_id = $request->author;
-        $product->type_id = $request->type;
+        $product->book_publisher = $request->publisher;
+        $product->book_author = $request->author;
+        $product->book_type = $request->type;
 
         $product->save();
         $request->img->storeAs('avatar', $filename);
@@ -52,7 +50,7 @@ class ProductController extends Controller
     public function getEditProduct($id)
     {
         $data['product'] = Books::find($id);
-        $data['catelist'] = Types::all();
+        $data['typelist'] = Types::all();
         $data['publisherlist'] = Publishers::all();
         $data['authorlist'] = Authors::all();
 
@@ -67,7 +65,7 @@ class ProductController extends Controller
         $arr['book_status'] = $request->status;
         $arr['book_publisher'] = $request->publisher;
         $arr['book_author'] = $request->author;
-        $arr['book_cate'] = $request->cate;
+        $arr['book_type'] = $request->type;
 
         if ($request->hasFile('img')) {
             $img = $request->img->getClientOriginalName();
@@ -75,7 +73,7 @@ class ProductController extends Controller
             $request->img->storeAs('avatar', $img);
         }
         $product::where('book_id', $id)->update($arr);
-        return redirect('admin/product');
+        return redirect('dashboard/product');
     }
 
     public function getDeleteProduct($id)

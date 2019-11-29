@@ -30,7 +30,7 @@
 								<div class="form-group">
 									<label>Ảnh sản phẩm</label>
 									<input id="img" type="file" name="img" class="form-control" onchange="changeImg(this)">
-									<img id="avatar" class="thumbnail" width="300px" src="{{ asset('lib/storage/app/avatar/'.$product->book_img) }}">
+									<img id="avatar" class="thumbnail" width="300px" src="{{ asset('../storage/app/avatar/'.$product->book_img) }}">
 								</div>
 								<div class="form-group">
 									<label>Trạng thái</label>
@@ -54,11 +54,11 @@
 								</div>
 								<div class="form-group">
 									<label>Danh mục</label>
-									<select required name="cate" class="form-control">
-										@if(count($catelist) > 0)
-										@foreach($catelist as $cate)
-										<option value="{{$cate->cate_id}}" @if($product->book_cate == $cate->cate_id) selected @endif>
-											{{$cate->cate_name}}
+									<select required name="type" class="form-control">
+										@if(count($typelist) > 0)
+										@foreach($typelist as $type)
+										<option value="{{$type->type_id}}" @if($product->book_type == $type->type_id) selected @endif>
+											{{$type->type_name}}
 										</option>
 										@endforeach
 										@else
@@ -90,13 +90,8 @@
 										@endif
 									</select>
 								</div>
-								<div class="form-group">
-									<label>Sản phẩm nổi bật</label><br>
-									Có: <input type="radio" name="featured" value="1" @if($product->prod_featured == 1) checked @endif>
-									Không: <input type="radio" name="featured" value="0" @if($product->prod_featured == 0) checked @endif>
-								</div>
 								<input type="submit" name="submit" value="Sửa" class="btn btn-primary">
-								<a href="{{ asset('admin/product') }}" class="btn btn-danger">Hủy bỏ</a>
+								<a href="{{ asset('dashboard/product') }}" class="btn btn-danger">Hủy bỏ</a>
 							</div>
 						</div>
 						{{ csrf_field() }}

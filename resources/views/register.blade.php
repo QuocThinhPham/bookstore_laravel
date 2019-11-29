@@ -1,4 +1,4 @@
-@extends("layout.Forms")
+@extends("layout.master")
 @section("content")
 
 @if(isset($info))
@@ -27,6 +27,12 @@
       <label class="control-label col-lg-4">Email</label>
       <div class="col-lg-8">
         <input type="email" name="email" id="" class="form-control" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-lg-4">Address</label>
+      <div class="col-lg-8">
+        <input type="text" name="address" id="" class="form-control" required>
       </div>
     </div>
     <div class="form-group">

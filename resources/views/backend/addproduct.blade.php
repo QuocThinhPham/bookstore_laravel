@@ -34,12 +34,11 @@
 									<img id="avatar" class="thumbnail" width="300px" src="img/new_seo-10-512.png">
 								</div>
 								<div class="form-group">
-									<label>Số lượng</label>
-									<input type="number" name="amount" id="" class="form-control">
-									<!-- <select required name="amount" class="form-control">
+									<label>Trạng thái</label>
+									<select required name="status" class="form-control">
 										<option value="1">Còn hàng</option>
 										<option value="0">Hết hàng</option>
-									</select> -->
+									</select>
 								</div>
 								<div class="form-group">
 									<label>Miêu tả</label>
@@ -90,13 +89,8 @@
 										@endif
 									</select>
 								</div>
-								<div class="form-group">
-									<label>Sản phẩm nổi bật</label><br>
-									Có: <input type="radio" name="featured" value="1">
-									Không: <input type="radio" checked name="featured" value="0">
-								</div>
 								<input type="submit" name="submit" value="Thêm" class="btn btn-primary">
-								<a href="{{ asset('admin/product')}}" class="btn btn-danger">Hủy bỏ</a>
+								<a href="{{ asset('dashboard/product')}}" class="btn btn-danger">Hủy bỏ</a>
 							</div>
 						</div>
 						{{ csrf_field() }}

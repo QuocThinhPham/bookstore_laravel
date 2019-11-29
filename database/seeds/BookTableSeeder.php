@@ -14,16 +14,14 @@ class BookTableSeeder extends Seeder
     {
         //
         DB::table('books')->delete();
-        for($i = 0; $i < 10; ++$i)
-        {
+        for ($i = 0; $i < 10; ++$i) {
             Books::create(array(
-                'book_name' => 'book'. $i,
+                'book_name' => 'book' . $i,
                 'book_price' => $i,
-                'book_amount' => '10',
                 'book_img' => 'book1.jpg',
-                'publisher_id' => '1',
-                'author_id' => '1',
-                'type_id' => '1'
+                'book_publisher' => '1',
+                'book_author' => '1',
+                'book_type' => '1'
             ));
         }
     }

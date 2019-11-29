@@ -20,13 +20,13 @@
 					<form action="" method="post">
 						<div class="form-group">
 							<label>Tên danh mục:</label>
-							<input type="text" name="name" class="form-control" placeholder="Tên danh mục..." value="{{ $cate->cate_name }}">
+							<input type="text" name="name" class="form-control" placeholder="Tên danh mục..." value="{{ $cate->type_name }}">
 						</div>
 						<div class="form-group">
 							<input type="submit" name="submit" class="form-control btn btn-primary" value="Sửa">
 						</div>
 						<div class="form-group">
-							<a href="{{ asset('admin/category') }}" class="form-control btn btn-danger">Huỷ bỏ</a>
+							<a href="{{ asset('dashboard/category') }}" class="form-control btn btn-danger">Huỷ bỏ</a>
 						</div>
 						{{ csrf_field() }}
 					</form>

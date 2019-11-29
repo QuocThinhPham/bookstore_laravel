@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\Users;
+
 class UsersSeedTable extends Seeder
 {
     /**
@@ -13,12 +14,11 @@ class UsersSeedTable extends Seeder
     {
         DB::table('users')->delete();
         Users::create(array(
-            'user_name' => 'Phan Trung Naem',
+            'user_name' => 'Phan Trung Nam',
             'user_email' => '1@gmail.com',
             'user_password' => Hash::make('123'),
-            'user_phone_number' => '04659565'
+            'user_phone_number' => '04659565',
+            'user_address' => 'HCM'
         ));
-
-
     }
 }
