@@ -24,9 +24,9 @@ class BooksController extends Controller
     public function post()
     { }
 
-    public function getAddToCart(Request $req, $id)
+    public function getAddToCart(Request $req)
     {
-        $book = Books::find($id);
+        $book = Books::find($req->id);
         $oldCart = Session::has('cart') ? Session::get('cart') : null;
         $cart = new Cart($oldCart);
 
@@ -36,7 +36,8 @@ class BooksController extends Controller
             $req->session()->forget('cart');
         }
         Session::put('cart', $cart);
-        return redirect('/books');
+        // return Session::get('cart')->totalAmount;
+        return Session::get('cart')->totalAmount;
     }
 
     public function getCart()

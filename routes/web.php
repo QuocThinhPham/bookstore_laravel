@@ -32,10 +32,6 @@ Route::post('/login', 'LoginController@checkUser');
 //logout
 Route::get('/logout', 'LoginController@logout');
 
-<<<<<<< HEAD
-//books
-Route::get('/books', 'BooksController@index');
-=======
 
 //admin page route
 // Route::get('/dashboard', 'AdminController@index');
@@ -72,6 +68,11 @@ Route::get('/books', 'BooksController@index');
 
 
 //add to cart
-Route::get('/cart/{id}', 'BooksController@getAddToCart');
+Route::get('/cart', 'BooksController@getAddToCart');
 Route::get('/test', 'BooksController@getCart');
->>>>>>> TrungNam
+Route::get('/checkout', function() {
+    return view('checkout');
+});
+// Route::get('/test2', function(){
+//     return 69;
+// });

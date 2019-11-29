@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="{{('frontend/bootstrap/dist/css/bootstrap.min.css')}}">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="{{('frontend/fontawesome/all.css')}}">
+  
 </head>
 
 <body>

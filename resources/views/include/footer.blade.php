@@ -66,6 +66,24 @@
 <script src="{{('frontend/fontawesome/all.js')}}"></script>
 <script src="{{('frontend/js/app.js')}}"></script>
 <script src="{{('frontend/js/animation.js')}}"></script>
+<script type="text/javascript">
+    $('.add-cart').click(function(e){
+      e.preventDefault();
+      var bookId = $(this).attr('id');
+      $.ajax({
+        url: window.location.origin + '/cart',
+        method: 'get',
+        data: {id: bookId},
+        success: function(data){
+          $('#cart-total').html(data);
+          // alert('Thêm vào giỏ hàng thành công.');
+        },
+        error: function() {
+          alert('Thêm vào giỏ hàng thất bại.');
+        }
+      });
+    });
+</script>
 </body>
 
 </html>
