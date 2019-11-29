@@ -54,7 +54,7 @@
 								</div>
 								<div class="form-group">
 									<label>Danh mục</label>
-									<select required name="cate" class="form-control">
+									<select required name="type" class="form-control">
 										@if(count($typelist) > 0)
 										@foreach($typelist as $type)
 										<option value="{{$type->type_id}}" @if($product->book_type == $type->type_id) selected @endif>
@@ -96,7 +96,7 @@
 									Không: <input type="radio" name="featured" value="0" @if($product->prod_featured == 0) checked @endif>
 								</div>
 								<input type="submit" name="submit" value="Sửa" class="btn btn-primary">
-								<a href="{{ asset('admin/product') }}" class="btn btn-danger">Hủy bỏ</a>
+								<a href="{{ asset('dashboard/product') }}" class="btn btn-danger">Hủy bỏ</a>
 							</div>
 						</div>
 						{{ csrf_field() }}

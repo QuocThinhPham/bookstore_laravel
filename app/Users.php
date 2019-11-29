@@ -9,7 +9,7 @@ class Users extends Authenticatable
 {
     protected $table = 'users';
     protected $primaryKey = 'user_id';
-    protected $timeStamp = true; 
+    protected $timeStamp = true;
     public function getAuthPassword()
     {
         return $this->user_password;

@@ -17,7 +17,7 @@
   <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container-fluid">
       <div class="navbar-header">
-        <a class="navbar-brand" href="{{ asset('admin/home') }}">Amazon</a>
+        <a class="navbar-brand" href="{{ asset('home') }}">Amazon</a>
         <ul class="user-menu">
           <li class="dropdown pull-right">
             <a href="#" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown">
@@ -47,6 +47,9 @@
       <li class="active"><a href="{{ asset('dashboard') }}"><svg class="glyph stroked dashboard-dial">
             <use xlink:href="#stroked-dashboard-dial"></use>
           </svg> Trang chủ</a></li>
+      <li><a href="{{ asset('dashboard/user') }}"><svg class="glyph stroked line-graph">
+            <use xlink:href="#stroked-line-graph"></use>
+          </svg> Người dùng</a></li>
       <li><a href="{{ asset('dashboard/product') }}"><svg class="glyph stroked calendar">
             <use xlink:href="#stroked-calendar"></use>
           </svg> Sách</a></li>
@@ -56,9 +59,10 @@
       <li><a href="{{ asset('dashboard/publisher') }}"><svg class="glyph stroked calendar">
             <use xlink:href="#stroked-calendar"></use>
           </svg> Nhà xuất bản</a></li>
-      <li><a href=""><svg class="glyph stroked line-graph">
+      <li><a href="{{ asset('dashboard/author') }}"><svg class="glyph stroked line-graph">
             <use xlink:href="#stroked-line-graph"></use>
           </svg> Tác giả</a></li>
+
       <li role="presentation" class="divider"></li>
     </ul>
 

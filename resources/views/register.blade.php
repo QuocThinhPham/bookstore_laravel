@@ -1,11 +1,8 @@
-@extends("layout.Forms")
+@extends("layout.master")
 @section("content")
 
 <!-- Register -->
 <div class="form form-customer">
-  @if(isset($info))
-  <p class="alert alert-success text-center">{{$info}}</p>
-  @endif
   <form action="{{url('/register')}}" method="post" class="form-horizontal">
     @csrf
     <h3>Register</h3>

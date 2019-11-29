@@ -50,7 +50,7 @@
 						</svg>
 					</div>
 					<div class="col-sm-9 col-lg-7 widget-right">
-						<div class="large">24</div>
+						<div class="large">{{ count($userlist) }}</div>
 						<div class="text-muted">Người dùng</div>
 					</div>
 				</div>
@@ -65,7 +65,7 @@
 						</svg>
 					</div>
 					<div class="col-sm-9 col-lg-7 widget-right">
-						<div class="large">25.2k</div>
+						<div class="large">{{ count($typelist) }}</div>
 						<div class="text-muted">Danh mục</div>
 					</div>
 				</div>

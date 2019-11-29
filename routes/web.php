@@ -11,6 +11,8 @@
 |
 */
 //home routes
+
+
 Route::get('/', function () {
     return view('home');
 });
@@ -29,6 +31,7 @@ Route::post('register', 'RegisterController@createUser');
 //login
 Route::get('login', 'LoginController@index');
 Route::post('login', 'LoginController@checkUser');
+// Route::post('login', 'LoginController@postLogin');
 
 
 //logout
@@ -45,8 +48,11 @@ Route::get('cart/{id}', 'BooksController@getAddToCart');
 // Route -> Admin
 Route::group(['prefix' => 'dashboard'], function () {
     Route::get('/', 'AdminController@index');
-
     Route::group(['namespace' => 'Admin'], function () {
+        Route::get('login', 'LoginController@getLogin');
+        Route::post('login', 'LoginController@postLogin');
+
+        Route::get('user', 'UserController@getUser');
         // Route -> Category
         Route::group(['prefix' => 'category'], function () {
             Route::get('/', 'CategoryController@getCate');
@@ -78,6 +84,16 @@ Route::group(['prefix' => 'dashboard'], function () {
             Route::get('edit/{id}', 'PublisherController@postEditPublisher');
 
             Route::get('delete/{id}', 'PublisherController@getDeletePublisher');
+        });
+
+        Route::group(['prefix' => 'author'], function () {
+            Route::get('/', 'AuthorController@getAuthor');
+            Route::post('/', 'AuthorController@postAuthor');
+
+            Route::get('edit/{id}', 'AuthorController@getEditAuthor');
+            Route::post('edit/{id}', 'AuthorController@postEditAuthor');
+
+            Route::get('delete/{id}', 'AuthorController@getDeleteAuthor');
         });
     });
 });

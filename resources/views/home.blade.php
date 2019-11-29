@@ -15,7 +15,7 @@
         <img src="{{('frontend/images/banner-1.jpg')}}" alt="" style=" width:100%;height: calc(80vh - 100px);">
       </div>
       <div class="item">
-        <img src="{{('frontend/images/banner-3.jpg')}}" alt="" style=" width:100%;height: calc(80vh - 100px);">
+        <img src="{{('frontend/images/banner-2.jpg')}}" alt="" style=" width:100%;height: calc(80vh - 100px);">
       </div>
       <div class="item">
         <img src="{{('frontend/images/banner-3.jpg')}}" alt="" style=" width:100%;height: calc(80vh - 100px);">

@@ -22,22 +22,36 @@ class LoginController extends Controller
     {
 
         $this->validate($req, [
-            'userEmail' => 'required|email',
-            'userPass' => 'required|alphaNum|min:3'
+            'email' => 'required|email',
+            'password' => 'required|alphaNum|min:3'
         ]);
 
         $user_data = array(
-            'user_email'  => $req->userEmail,
-            'password' => $req->userPass
+            'user_email'  => $req->email,
+            'password' => $req->password
         );
 
         if (Auth::attempt($user_data)) {
-            return redirect('/home');
+            return redirect('home');
         } else {
             $error = "Email hoặc mật khẩu không khớp.";
             return view('login', compact('error'));
         }
     }
+
+    public function postLogin(Request $request)
+    {
+        $arr = [
+            'email' => $request->email,
+            'password' => $request->password
+        ];
+        if (Auth::attempt($arr)) {
+            return redirect()->intended('home');
+        } else {
+            return back()->withInput()->with('error', 'Tài khoản hoặc mật khẩu chưa đúng');
+        }
+    }
+
     public function logout()
     {
         Auth::logout();

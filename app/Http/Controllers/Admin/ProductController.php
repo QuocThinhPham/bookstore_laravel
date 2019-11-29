@@ -64,10 +64,10 @@ class ProductController extends Controller
         $product = new Books;
         $arr['book_name'] = $request->name;
         $arr['book_price'] = $request->price;
-        $arr['book_status'] = $request->status;
-        $arr['book_publisher'] = $request->publisher;
-        $arr['book_author'] = $request->author;
-        $arr['book_cate'] = $request->cate;
+        // $arr['book_status'] = $request->status;
+        $arr['publisher_id'] = $request->publisher;
+        $arr['author_id'] = $request->author;
+        $arr['type_id'] = $request->type;
 
         if ($request->hasFile('img')) {
             $img = $request->img->getClientOriginalName();
