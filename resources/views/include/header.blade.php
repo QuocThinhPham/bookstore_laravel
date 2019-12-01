@@ -71,12 +71,9 @@
           <nav class="nav-container" role="navigation">
             <div class="nav-inner">
               <ul class="nav navbar-nav">
-                <li><a href="home">home</a></li>
+                <li><a href="{{ asset('home') }}">home</a></li>
                 <li><a href="{{asset('books')}}">books</a></li>
-                <li><a href="">contact</a></li>
-                <li><a href="">affiliate</a></li>
-                <li><a href="">brands</a></li>
-                <li><a href="">specials</a></li>
+                <li><a href="{{asset('category')}}">Categories</a></li>
               </ul>
             </div>
           </nav>
