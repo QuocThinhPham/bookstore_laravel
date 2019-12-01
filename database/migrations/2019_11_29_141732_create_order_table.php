@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class UpdateAdminTable extends Migration
+class CreateOrderTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class UpdateAdminTable extends Migration
      */
     public function up()
     {
-        //
-        Schema::create('admin', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('email');
-            $table->string('password');
+        Schema::create('orders', function (Blueprint $table) {
+            $table->bigIncrements('order_id');
+            $table->unsignedBigInteger('user_id');
+            $table->double('totalPrice');
+            $table->foreign('user_id')->references('user_id')->on('users');
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ class UpdateAdminTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('table');
     }
 }

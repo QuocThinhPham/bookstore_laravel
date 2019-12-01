@@ -1,21 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="{{ url('frontend/css/style.css') }}">
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="{{ url('frontend/bootstrap/dist/css/bootstrap.min.css') }}">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="{{('frontend/fontawesome/all.css')}}">
-  
-</head>
-
-<body>
   <header>
     <div class="header-nav-wrapper">
       <div class="container">
@@ -44,6 +26,7 @@
               @if(Auth::user()->is_admin)
               <li><a href="{{url('dashboard')}}">Dashboard</a></li>
               @endif
+              <li><a href="{{url('profile')}}">Profile</a></li>
               <li><a href="{{url('logout')}}">Logout</a></li>
             </ul>
             @else
@@ -57,11 +40,11 @@
           <div class="header-cart col-lg-4">
             <div id="cart">
               <!-- <span class="cart-icon"></span> -->
-            <a href="test">
+              <a href="{{ url('shopping') }}">
                 <span id="cart-title">
                   <i class="fas fa-shopping-cart"></i> my cart
                 </span>
-                <span class="badge" id="cart-total">{{ Session::has('cart') ? Session::get('cart')->totalAmount : 0}}</span>
+                <span class="badge" id="cart-total">{{ Session::has('cart') ? Session::get('cart')['totalAmount'] : 0}}</span>
               </a>
             </div>
           </div>
@@ -81,12 +64,11 @@
             <div class="nav-inner">
               <ul class="nav navbar-nav">
                 <li><a href="home">home</a></li>
-                <li><a href="">blog</a></li>
+                <li><a href="{{asset('books')}}">shop</a></li>
                 <li><a href="">contact</a></li>
                 <li><a href="">affiliate</a></li>
                 <li><a href="">brands</a></li>
                 <li><a href="">specials</a></li>
-                <li><a href="">my account</a></li>
               </ul>
             </div>
           </nav>

@@ -42,8 +42,15 @@ Route::get('logout', 'LoginController@logout');
 Route::get('books', 'BooksController@index');
 
 
-//add to cart
-Route::get('cart/{id}', 'BooksController@getAddToCart');
+//cart
+Route::get('/cart', 'CartController@getAddToCart');
+Route::get('/shopping', 'CartController@getCart');
+
+//checkout
+Route::get('/checkout', 'OrderController@addOrder');
+
+//user profile
+Route::get('/profile', 'OrderController@index');
 
 // Route -> Admin
 Route::group(['prefix' => 'dashboard'], function () {
@@ -97,4 +104,10 @@ Route::group(['prefix' => 'dashboard'], function () {
             Route::get('delete/{id}', 'AuthorController@getDeleteAuthor');
         });
     });
+});
+
+
+//clear session
+Route::get('/clear', function () {
+    Session::forget('cart');
 });

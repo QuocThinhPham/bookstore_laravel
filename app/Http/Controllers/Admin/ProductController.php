@@ -37,9 +37,9 @@ class ProductController extends Controller
         $product->book_price = $request->price;
         $product->book_status = $request->status;
         $product->book_img = $filename;
-        $product->book_publisher = $request->publisher;
-        $product->book_author = $request->author;
-        $product->book_type = $request->type;
+        $product->publisher_id = $request->publisher;
+        $product->author_id = $request->author;
+        $product->type_id = $request->type;
 
         $product->save();
         $request->img->storeAs('avatar', $filename);
@@ -63,9 +63,9 @@ class ProductController extends Controller
         $arr['book_name'] = $request->name;
         $arr['book_price'] = $request->price;
         $arr['book_status'] = $request->status;
-        $arr['book_publisher'] = $request->publisher;
-        $arr['book_author'] = $request->author;
-        $arr['book_type'] = $request->type;
+        $arr['publisher_id'] = $request->publisher;
+        $arr['author_id'] = $request->author;
+        $arr['type_id'] = $request->type;
 
         if ($request->hasFile('img')) {
             $img = $request->img->getClientOriginalName();

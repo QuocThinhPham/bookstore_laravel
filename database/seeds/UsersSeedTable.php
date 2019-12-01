@@ -16,8 +16,8 @@ class UsersSeedTable extends Seeder
         Users::create(array(
             'user_name' => 'Phan Trung Nam',
             'user_email' => '1@gmail.com',
-            'user_password' => Hash::make('123'),
             'user_phone_number' => '04659565',
+            'user_password' => Hash::make('123'),
             'user_address' => 'HCM'
         ));
     }

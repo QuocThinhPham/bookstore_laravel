@@ -4,7 +4,7 @@
     <div class="container">
             <form>
                     <div class="form-group">
-                        <label for="address">Giio đến địa chỉ này</label>
+                        <label for="address">Giao đến địa chỉ này</label>
                         <input type="text" class="form-control" id="address"  placeholder="Địa chỉ">
                     </div>
                     <div class="form-group">
@@ -14,7 +14,7 @@
                     <button type="submit" class="btn btn-primary">Đặt Mua</button>
                 </form>
     </div>
-    @else
-    {{ redirect('/login') }}
+    {{-- @else
+    {{ redirect('/login') }} --}}
     @endif
 @endsection
