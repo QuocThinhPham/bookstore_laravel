@@ -1,14 +1,22 @@
   <header>
     <div class="header-nav-wrapper">
-      <div class="container">
-        <div class="header-nav-left col-lg-2">
+      <div class="container-fluid">
+        <div class="header-nav-left col-lg-1">
           <a href="{{url('/home')}}" style="text-decoration: none;">
             <div class="logo">
               <span>AMAZON</span>
             </div>
           </a>
         </div>
-        <div class="header-nav-right col-lg-5 col-lg-offset-5">
+        <div class="nav-form col lg-5 col-lg-offset-1">
+          <form action="" class="form-inline">
+            <input type="text" name="search" id="" class="form-control" placeholder="Search">
+            <button type="submit" class="btn btn-default">
+              <i class="fas fa-search"></i>
+            </button>
+          </form>
+        </div>
+        <div class="header-nav-right col-lg-5">
           <!-- login part -->
           <div class="dropdown myaccount col-lg-6">
             <a class="dropdown-toggle" data-toggle="dropdown">
@@ -64,7 +72,7 @@
             <div class="nav-inner">
               <ul class="nav navbar-nav">
                 <li><a href="home">home</a></li>
-                <li><a href="{{asset('books')}}">shop</a></li>
+                <li><a href="{{asset('books')}}">books</a></li>
                 <li><a href="">contact</a></li>
                 <li><a href="">affiliate</a></li>
                 <li><a href="">brands</a></li>

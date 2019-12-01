@@ -1,4 +1,5 @@
-@extends("layout.main")
+@extends("layout.master")
+@include('include.header')
 @section("content")
 <!-- Banner -->
 <div class="container column-right">
@@ -12,13 +13,13 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner">
       <div class="item active">
-        <img src="{{('frontend/images/banner-1.jpg')}}" alt="" style=" width:100%;height: calc(80vh - 100px);">
+        <img src="{{('frontend/images/sachhay.jpg')}}" alt="" style=" width:100%;height: calc(80vh - 100px);">
       </div>
       <div class="item">
-        <img src="{{('frontend/images/banner-2.jpg')}}" alt="" style=" width:100%;height: calc(80vh - 100px);">
+        <img src="{{('frontend/images/banner1.jpg')}}" alt="" style=" width:100%;height: calc(80vh - 100px);">
       </div>
       <div class="item">
-        <img src="{{('frontend/images/banner-3.jpg')}}" alt="" style=" width:100%;height: calc(80vh - 100px);">
+        <img src="{{('frontend/images/banner1.png')}}" alt="" style=" width:100%;height: calc(80vh - 100px);">
       </div>
     </div>
     <!-- Left and right controls -->
@@ -35,7 +36,8 @@
 </div>
 <!-- End Of Banner -->
 <!-- Products -->
-<div class="products">
+
+<!-- <div class="products">
   <div class="container">
     <div class="products-center">
       <div class="product-tab box">
@@ -233,6 +235,5 @@
         </div>
       </div>
     </div>
-  </div>
-  @endsection
-  <!-- End Of Products -->
+  </div> -->
+@endsection
