@@ -32,8 +32,8 @@
     e.preventDefault();
     var bookId = $(this).attr('id');
     $.ajax({
-      // url: window.location.origin + '/cart',
-      url: window.location.origin + '/bookstore_laravel/public/cart',
+      url: window.location.origin + '/cart',
+      // url: window.location.origin + '/bookstore_laravel/public/cart',
       method: 'get',
       data: {
         id: bookId
@@ -47,6 +47,8 @@
       }
     });
   });
+
+  $()
 </script>
 </body>
 

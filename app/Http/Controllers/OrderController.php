@@ -27,10 +27,7 @@ class OrderController extends Controller
     public function addOrder()
     {
         if(!Auth::check())
-            redirect('/login');
-
-        
-        
+           return redirect('/login');
         $cart = Session::get('cart');
         $order = new Order();
         $order->user_id = Auth::user()->user_id;

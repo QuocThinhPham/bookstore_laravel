@@ -16,10 +16,7 @@ class CreateOrderTable extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->bigIncrements('order_id');
             $table->unsignedBigInteger('user_id');
-<<<<<<< HEAD
             $table->double('totalPrice');
-=======
->>>>>>> rebuild cart
             $table->foreign('user_id')->references('user_id')->on('users');
             $table->timestamps();
         });

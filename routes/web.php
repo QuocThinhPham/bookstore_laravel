@@ -42,6 +42,7 @@ Route::get('books', 'BooksController@index');
 //cart
 Route::get('/cart', 'CartController@getAddToCart');
 Route::get('/shopping', 'CartController@getCart');
+Route::get('/remove-cart/{id}', 'CartController@removeCartItem');
 
 //checkout
 Route::get('/checkout', 'OrderController@addOrder');

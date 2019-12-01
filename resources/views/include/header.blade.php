@@ -21,19 +21,16 @@
           <div class="dropdown myaccount col-lg-6">
             <a class="dropdown-toggle" data-toggle="dropdown">
               <span class="user-info-image">
-                @if (Auth::check())
-                <i class="far fa-user"></i>{{Auth::user() -> user_name}}
+                @if (Auth::guard('users')->check())
+                <i class="far fa-user"></i>{{Auth::guard('users')->user() -> user_name}}
                 @else
                 <i class="far fa-user"></i>My Acount
                 @endif
               </span>
               <span class="caret"></span>
             </a>
-            @if(isset(Auth::user()->user_email))
+            @if(isset(Auth::guard('users')->user()->user_email))
             <ul class="dropdown-menu">
-              @if(Auth::user()->is_admin)
-              <li><a href="{{url('dashboard')}}">Dashboard</a></li>
-              @endif
               <li><a href="{{url('profile')}}">Profile</a></li>
               <li><a href="{{url('logout')}}">Logout</a></li>
             </ul>

@@ -31,7 +31,7 @@ class LoginController extends Controller
             'password' => $req->password
         );
 
-        if (Auth::attempt($user_data)) {
+        if (Auth::guard('users')->attempt($user_data)) {
             return redirect('home');
         } else {
             $error = "Email hoặc mật khẩu không khớp.";
@@ -41,7 +41,7 @@ class LoginController extends Controller
 
     public function logout()
     {
-        Auth::logout();
+        Auth::guard('users')->logout();
         return redirect('home');
     }
 }
