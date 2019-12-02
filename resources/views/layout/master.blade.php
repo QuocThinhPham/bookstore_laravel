@@ -7,11 +7,11 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="{{('frontend/css/style.css')}}">
+  <link rel="stylesheet" href="{{url('frontend/css/style.css')}}">
   <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="{{('frontend/bootstrap/dist/css/bootstrap.min.css')}}">
+  <link rel="stylesheet" href="{{url('frontend/bootstrap/dist/css/bootstrap.min.css')}}">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="{{('frontend/fontawesome/all.css')}}">
+  <link rel="stylesheet" href="{{url('frontend/fontawesome/all.css')}}">
 </head>
 
 <body>

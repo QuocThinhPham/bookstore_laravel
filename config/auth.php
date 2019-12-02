@@ -54,8 +54,6 @@ return [
             'driver' => 'token',
             'provider' => 'users',
         ],
-<<<<<<< HEAD
-=======
         'admin' => [
             'driver' => 'session',
             'provider' => 'admin',
@@ -64,7 +62,6 @@ return [
             'driver' => 'token',
             'provider' => 'admin',
         ],
->>>>>>> QThinh
     ],
 
     /*

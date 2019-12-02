@@ -23,13 +23,10 @@ class Books extends Model
     public function author()
     {
         return $this->belongsTo('App\Authors','author_id');
-<<<<<<< HEAD
-=======
     }
 
     public function order()
     {
         return $this->belongsToMany('App\orders', 'order_detail', 'order_id', 'book_id')->withPivot('amount');
->>>>>>> QThinh
     }
 }

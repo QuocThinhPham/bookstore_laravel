@@ -17,6 +17,7 @@ Route::get('/', function(){
     return redirect('home');
 });
 Route::get('home', 'HomeController@index');
+// Route::get('/search', 'HomeController@search');
 Route::get('/search', 'HomeController@searchBook');
 
 // Route -> User

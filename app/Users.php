@@ -11,10 +11,6 @@ class Users extends Authenticatable
     protected $primaryKey = 'user_id';
     protected $timeStamp = true;
 
-<<<<<<< HEAD
-
-=======
->>>>>>> QThinh
     public function order()
     {
         return $this->hasMany('App\Order', 'user_id');

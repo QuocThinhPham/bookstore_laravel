@@ -7,15 +7,9 @@
               <span>AMAZON</span>
             </div>
           </a>
-          <div>
-            <form action="{{url('/search')}}" method="get">
-                <input type="text" name="search">
-                <input type="submit" class="glyphicon glyphicon-search">
-            </form>
-          </div>
         </div>
         <div class="nav-form col lg-5 col-lg-offset-1">
-          <form action="" class="form-inline">
+        <form action="{{url('search')}}" class="form-inline" method="get">
             <input type="text" name="search" id="" class="form-control" placeholder="Search">
             <button type="submit" class="btn btn-default">
               <i class="fas fa-search"></i>
@@ -37,12 +31,6 @@
             </a>
             @if(isset(Auth::guard('users')->user()->user_email))
             <ul class="dropdown-menu">
-<<<<<<< HEAD
-              @if(Auth::user()->is_admin)
-              <li><a href="{{url('dashboard')}}">Dashboard</a></li>
-              @endif
-=======
->>>>>>> QThinh
               <li><a href="{{url('profile')}}">Profile</a></li>
               <li><a href="{{url('logout')}}">Logout</a></li>
             </ul>
@@ -56,13 +44,8 @@
           <!-- End login part -->
           <div class="header-cart col-lg-4">
             <div id="cart">
-<<<<<<< HEAD
-              <span class="cart-icon"></span>
-            <a href="{{ url('shopping') }}">
-=======
               <!-- <span class="cart-icon"></span> -->
               <a href="{{ url('shopping') }}">
->>>>>>> QThinh
                 <span id="cart-title">
                   <i class="fas fa-shopping-cart"></i>
                 </span>
@@ -85,18 +68,9 @@
           <nav class="nav-container" role="navigation">
             <div class="nav-inner">
               <ul class="nav navbar-nav">
-<<<<<<< HEAD
-                <li><a href="/home">home</a></li>
-                <li><a href="">blog</a></li>
-                <li><a href="">contact</a></li>
-                <li><a href="">affiliate</a></li>
-                <li><a href="">brands</a></li>
-                <li><a href="">specials</a></li>
-=======
                 <li><a href="{{ asset('home') }}">home</a></li>
                 <li><a href="{{asset('books')}}">books</a></li>
-                <li><a href="{{asset('category')}}">Categories</a></li>
->>>>>>> QThinh
+                {{-- <li><a href="{{asset('category')}}">Categories</a></li> --}}
               </ul>
             </div>
           </nav>

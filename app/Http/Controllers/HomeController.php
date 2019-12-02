@@ -13,7 +13,7 @@ class HomeController extends Controller
     }
     public function search(Request $request)
     {
-        return view('books.index');
+        return view('category');
     }
     public function searchBook(Request $request)
     {
@@ -21,6 +21,6 @@ class HomeController extends Controller
         $books = Books::where('book_name','like','%'.$search.'%')
         ->orwhere('book_price','like','%'.$search.'%')
         ->get();
-        return view('books.index')->with('books',$books);
+        return view('category')->with('books',$books);
     }
 }
