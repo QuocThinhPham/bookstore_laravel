@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="{{('frontend/css/bootstrap.min.css')}}">
-    <link rel="stylesheet" href="{{('frontend/css/CustomAdmin.css')}}">
+    <link rel="stylesheet" href="{{ url('frontend/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{ url('frontend/css/CustomAdmin.css')}}">
 </head>
 <body>
     @include('include.AdminNav')

@@ -17,7 +17,6 @@ class BooksController extends Controller
      */
     public function index()
     {
-        //
         $books = Books::all();
         return view('books.index')->with('books', $books);
     }
@@ -25,7 +24,6 @@ class BooksController extends Controller
     public function post()
     { }
 
-<<<<<<< HEAD
     public function getAddToCart(Request $req)
     {
         $book = Books::find($req->id);
@@ -51,23 +49,6 @@ class BooksController extends Controller
         $oldCart = Session::get('cart');
         $cart = new Cart($oldCart);
         return view('cart', ['books' => $cart->items, 'totalPrice' => $cart->totalPrice]);
-=======
-    public function getAddToCart(Request $req, $id)
-    {
-        if (!Auth::check()) {
-            return redirect()->intended('login');
-        }
-        $book = Books::find($id);
-        $oldCart = Session::has('cart') ? Session::get('cart') : null;
-        $cart = new Cart($oldCart);
-
-        $cart->add($book, $book->book_id);
-        if (Session::has('cart')) {
-            $req->session()->forget('cart');
-        }
-        Session::put('cart', $cart);
-        return redirect('/books');
->>>>>>> QThinh
     }
     /**
      * Show the form for creating a new resource.

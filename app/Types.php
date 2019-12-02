@@ -13,6 +13,6 @@ class Types extends Model
     public $timestamps = false;
     public function books()
     {
-        return $this->hasMany('App\Books', 'book_type');
+        return $this->hasMany('App\Books', 'type_id');
     }
 }

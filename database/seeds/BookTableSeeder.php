@@ -19,9 +19,9 @@ class BookTableSeeder extends Seeder
                 'book_name' => 'book' . $i,
                 'book_price' => $i,
                 'book_img' => 'book1.jpg',
-                'book_publisher' => '1',
-                'book_author' => '1',
-                'book_type' => '1'
+                'publisher_id' => '1',
+                'author_id' => '1',
+                'type_id' => '1'
             ));
         }
     }

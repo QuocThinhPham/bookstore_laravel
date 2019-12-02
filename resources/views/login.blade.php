@@ -1,9 +1,6 @@
 @extends('layout.master')
 @section('content')
 <div class="form login">
-  @if(isset($info))
-  <p class="alert alert-success text-center">{{$info}}</p>
-  @endif
   @if (isset($error))
   <h4 class="alert alert-danger text-center">{{ $error }}</h4>
   @endif
@@ -24,7 +21,8 @@
       </div>
     </div>
     <div class="form-group text-center">
-      <button type="submit" class="btn btn-primary">Login</button>
+      <button type="submit" class="btn btn-primary">Đăng Nhập</button>
+      <p>Chưa có tài khoản ? <a href="/register">Đăng Ký</a></p>
     </div>
   </form>
 </div>

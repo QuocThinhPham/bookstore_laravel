@@ -9,7 +9,8 @@
 }
 
 body {
-    background: #e3f3ff !important;
+    background: #f1f1f1 !important;
+    overflow-x: hidden;
 }
 
 
@@ -494,7 +495,7 @@ div.form .form-group .control-label {
     right: 0;
     top: 100px;
     transition: all 0.7s;
-    background: #4de93f;
+    background: #2666f0;
     padding: 10px;
     color: #f1f1f1;
 }

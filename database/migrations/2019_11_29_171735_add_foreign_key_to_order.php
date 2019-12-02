@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAdminTable extends Migration
+class AddForeignKeyToOrder extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,9 @@ class CreateAdminTable extends Migration
      */
     public function up()
     {
-        Schema::create('admin', function (Blueprint $table) {
-            $table->bigIncrements('admin_id');
-            $table->string('email');
-            $table->string('password');
-            $table->timestamps();
+        Schema::table('orders', function (Blueprint $table) {
+            //
+            $table->foreign('user_id')->references('user_id')->on('users');
         });
     }
 
@@ -28,6 +26,8 @@ class CreateAdminTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('admin');
+        Schema::table('orders', function (Blueprint $table) {
+            //
+        });
     }
 }

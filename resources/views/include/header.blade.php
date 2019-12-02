@@ -11,8 +11,8 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="{{ url('frontend/bootstrap/dist/css/bootstrap.min.css') }}">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="{{('frontend/fontawesome/all.css')}}">
-  
+  <link rel="stylesheet" href="{{ url('frontend/fontawesome/all.css') }}">
+
 </head>
 
 <body>
@@ -25,6 +25,12 @@
               <span>AMAZON</span>
             </div>
           </a>
+          <div>
+            <form action="{{url('/search')}}" method="get">
+                <input type="text" name="search">
+                <input type="submit" class="glyphicon glyphicon-search">
+            </form>
+          </div>
         </div>
         <div class="header-nav-right col-lg-5 col-lg-offset-5">
           <!-- login part -->
@@ -44,6 +50,7 @@
               @if(Auth::user()->is_admin)
               <li><a href="{{url('dashboard')}}">Dashboard</a></li>
               @endif
+              <li><a href="{{url('profile')}}">Profile</a></li>
               <li><a href="{{url('logout')}}">Logout</a></li>
             </ul>
             @else
@@ -56,10 +63,10 @@
           <!-- End login part -->
           <div class="header-cart col-lg-4">
             <div id="cart">
-              <!-- <span class="cart-icon"></span> -->
-            <a href="test">
+              <span class="cart-icon"></span>
+            <a href="{{ url('shopping') }}">
                 <span id="cart-title">
-                  <i class="fas fa-shopping-cart"></i> my cart
+                  <i class="fas fa-shopping-cart"></i>
                 </span>
                 <span class="badge" id="cart-total">{{ Session::has('cart') ? Session::get('cart')->totalAmount : 0}}</span>
               </a>
@@ -67,7 +74,7 @@
           </div>
           <div class="header-cart col-lg-2">
             <div>
-              <!-- <span class="cart-icon"></span> -->
+              <span class="cart-icon"></span>
               <a href="{{ asset('dashboard/login') }}">Admin</a>
             </div>
           </div>
@@ -80,13 +87,12 @@
           <nav class="nav-container" role="navigation">
             <div class="nav-inner">
               <ul class="nav navbar-nav">
-                <li><a href="home">home</a></li>
+                <li><a href="/home">home</a></li>
                 <li><a href="">blog</a></li>
                 <li><a href="">contact</a></li>
                 <li><a href="">affiliate</a></li>
                 <li><a href="">brands</a></li>
                 <li><a href="">specials</a></li>
-                <li><a href="">my account</a></li>
               </ul>
             </div>
           </nav>

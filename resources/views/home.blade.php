@@ -1,6 +1,9 @@
 @extends("layout.main")
 @section("content")
 <!-- Banner -->
+@if(isset($info))
+  <div class="showMess" id="alert-mess">{{$info}}</div>
+@endif
 <div class="container column-right">
   <div id="myCarousel" class="carousel slide" data-ride="carousel" style="width: 100%;height: calc(80vh - 100px);">
     <!-- Indicators -->
@@ -12,13 +15,13 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner">
       <div class="item active">
-        <img src="{{('frontend/images/banner-1.jpg')}}" alt="" style=" width:100%;height: calc(80vh - 100px);">
+        <img src="{{url('frontend/images/banner-1.jpg')}}" alt="" style=" width:100%;height: calc(80vh - 100px);">
       </div>
       <div class="item">
-        <img src="{{('frontend/images/banner-2.jpg')}}" alt="" style=" width:100%;height: calc(80vh - 100px);">
+        <img src="{{url('frontend/images/banner-2.jpg')}}" alt="" style=" width:100%;height: calc(80vh - 100px);">
       </div>
       <div class="item">
-        <img src="{{('frontend/images/banner-3.jpg')}}" alt="" style=" width:100%;height: calc(80vh - 100px);">
+        <img src="{{url('frontend/images/banner-3.jpg')}}" alt="" style=" width:100%;height: calc(80vh - 100px);">
       </div>
     </div>
     <!-- Left and right controls -->
@@ -34,6 +37,8 @@
 </div>
 </div>
 <!-- End Of Banner -->
+<div>
+</div>
 <!-- Products -->
 <div class="products">
   <div class="container">

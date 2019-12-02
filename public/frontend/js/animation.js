@@ -1,5 +1,5 @@
 const el = document.querySelector('#alert-mess');
-const btn = document.querySelector('button');
+
 
 function performAnimation()
 {
@@ -13,7 +13,7 @@ function performAnimation()
 if(el !== null)
 {
     window.addEventListener('DOMContentLoaded', () => {
-        setTimeout(performAnimation(), 2000);
+        setTimeout(performAnimation(), 5000);
     });
 }
 

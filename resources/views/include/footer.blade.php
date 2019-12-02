@@ -64,9 +64,9 @@
 <!-- Bootstrap JS -->
 <script src="{{ url('frontend/bootstrap/dist/js/bootstrap.min.js')}}"></script>
 
-<script src="{{('frontend/fontawesome/all.js')}}"></script>
-<script src="{{('frontend/js/app.js')}}"></script>
-<script src="{{('frontend/js/animation.js')}}"></script>
+<script src="{{ url('frontend/fontawesome/all.js')}}"></script>
+<script src="{{ url('frontend/js/app.js')}}"></script>
+<script src="{{ url('frontend/js/animation.js')}}"></script>
 <script type="text/javascript">
     $('.add-cart').click(function(e){
       e.preventDefault();

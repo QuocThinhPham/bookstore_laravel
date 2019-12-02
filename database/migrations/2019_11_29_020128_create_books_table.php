@@ -19,12 +19,12 @@ class CreateBooksTable extends Migration
             $table->double('book_price');
             $table->boolean('book_status')->default(1);
             $table->text('book_img');
-            $table->unsignedBigInteger('book_publisher');
-            $table->unsignedBigInteger('book_author');
-            $table->unsignedBigInteger('book_type');
-            $table->foreign('book_publisher')->references('publisher_id')->on('publishers');
-            $table->foreign('book_author')->references('author_id')->on('authors');
-            $table->foreign('book_type')->references('type_id')->on('types');
+            $table->unsignedBigInteger('publisher_id');
+            $table->unsignedBigInteger('author_id');
+            $table->unsignedBigInteger('type_id');
+            $table->foreign('publisher_id')->references('publisher_id')->on('publishers');
+            $table->foreign('author_id')->references('author_id')->on('authors');
+            $table->foreign('type_id')->references('type_id')->on('types');
             $table->timestamps();
         });
     }

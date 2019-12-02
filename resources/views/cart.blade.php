@@ -60,7 +60,7 @@
                             <a class="thumbnail pull-left" href="#"> <img class="media-object" src="/frontend/images/{{ $book['item']['book_img'] }}" style="width: 72px; height: 72px;"> </a>
                                 <div class="media-body">
                                     <h4 class="media-heading"><a href="#">{{ $book['item']['book_name'] }}</a></h4>
-                                <h5 class="media-heading"> by <a href="#">{{ $book['item']['author_id']}}</a></h5>
+                                <h5 class="media-heading"> Tác Giả: <a href="#">{{ $book['item']['author']['author_name']}}</a></h5>
                                     {{-- <span>Status: </span><span class="text-success"><strong>In Stock</strong></span> --}}
                                 </div>
                             </div></td>

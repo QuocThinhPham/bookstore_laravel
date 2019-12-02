@@ -13,12 +13,11 @@
 //home routes
 
 
-Route::get('/', function () {
-    return view('home');
+Route::get('/', function(){
+    return redirect('home');
 });
-Route::get('home', function () {
-    return view('home');
-});
+Route::get('home', 'HomeController@index');
+Route::get('/search', 'HomeController@searchBook');
 
 // Route -> User
 
@@ -42,8 +41,15 @@ Route::get('logout', 'LoginController@logout');
 Route::get('books', 'BooksController@index');
 
 
-//add to cart
-Route::get('cart/{id}', 'BooksController@getAddToCart');
+//cart
+Route::get('/cart', 'BooksController@getAddToCart');
+Route::get('/shopping', 'BooksController@getCart');
+
+//checkout
+Route::get('/checkout', 'OrderController@addOrder');
+
+//user profile
+Route::get('/profile', 'OrderController@index');
 
 // Route -> Admin
 Route::group(['prefix' => 'dashboard'], function () {
@@ -98,3 +104,8 @@ Route::group(['prefix' => 'dashboard'], function () {
         });
     });
 });
+    Route::get('listbook/{type_id}','ListbookController@index');
+//clear session
+// Route::get('/clear', function(){
+//     Session::forget('cart');
+// });

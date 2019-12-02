@@ -7,7 +7,7 @@
     <div class="product-item col-lg-3">
       <div>
         <div class="img-product">
-          <img src="{{ asset('../storage/app/avatar/'.$book->book_img) }}">
+          <img src="\frontend\images\{{$book->book_img}}">
         </div>
         <div class="details-product">
           <h3><a href="{{ 'books/'.$book->book_id }}">{{$book->book_name}}</a></h3>
@@ -15,7 +15,7 @@
         </div>
       </div>
       <div class="button-group">
-        <a href="{{ 'cart/'.$book->book_id }}" class="add-cart" id="btn-{{ $book->book_id }}"><i class="fas fa-cart-plus"></i></a>
+        <a href="{{ 'cart/'.$book->book_id }}" class="add-cart" id="{{ $book->book_id }}"><i class="fas fa-cart-plus"></i></a>
         <button class="quickview"><i class="far fa-eye"></i></button>
         <button class="wishlist"><i class="far fa-heart"></i></button>
       </div>
