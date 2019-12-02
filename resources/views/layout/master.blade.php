@@ -7,11 +7,11 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="{{('frontend/css/style.css')}}">
+  <link rel="stylesheet" href="{{ asset('frontend/css/style.css')}}">
   <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="{{('frontend/bootstrap/dist/css/bootstrap.min.css')}}">
+  <link rel="stylesheet" href="{{ asset('frontend/bootstrap/dist/css/bootstrap.min.css')}}">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="{{('frontend/fontawesome/all.css')}}">
+  <link rel="stylesheet" href="{{ asset('frontend/fontawesome/all.css')}}">
 </head>
 
 <body>
@@ -20,13 +20,13 @@
 
 </body>
 <!-- jQuery -->
-<script src="{{('frontend/js/jquery-3.4.1.min.js')}}"></script>
+<script src="{{ asset('frontend/js/jquery-3.4.1.min.js')}}"></script>
 <!-- Bootstrap JS -->
-<script src="{{('frontend/bootstrap/dist/js/bootstrap.min.js')}}"></script>
+<script src="{{ asset('frontend/bootstrap/dist/js/bootstrap.min.js')}}"></script>
 
-<script src="{{('frontend/fontawesome/all.js')}}"></script>
-<script src="{{('frontend/js/app.js')}}"></script>
-<script src="{{('frontend/js/animation.js')}}"></script>
+<script src="{{ asset('frontend/fontawesome/all.js')}}"></script>
+<script src="{{ asset('frontend/js/app.js')}}"></script>
+<script src="{{ asset('frontend/js/animation.js')}}"></script>
 <script type="text/javascript">
   $('.add-cart').click(function(e) {
     e.preventDefault();

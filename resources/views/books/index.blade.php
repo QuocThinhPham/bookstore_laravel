@@ -12,7 +12,7 @@
         </div>
         <div class="details-product">
           <h3><a href="{{ 'books/'.$book->book_id }}">{{$book->book_name}}</a></h3>
-          <h5 class="price-product">{{$book->book_price}} VNĐ</h5>
+          <h5 class="price-product">{{number_format($book->book_price,0,',','.')}} VNĐ</h5>
         </div>
       </div>
       <div class="button-group">

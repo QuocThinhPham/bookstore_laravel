@@ -9,6 +9,7 @@
 }
 
 body {
+    overflow-x: hidden;
     background: #f1f1f1 !important;
 }
 
@@ -22,7 +23,7 @@ body {
     width: 100%;
     height: 50px;
     line-height: 50px;
-    background: #5680E9;
+    background: #222;
 }
 
 .header-nav-wrapper * {
@@ -71,7 +72,7 @@ body {
 }
 
 .header-nav-right .myaccount .dropdown-menu {
-    width: 180px;
+    width: 100px;
     transition: all 0.2s linear;
 }
 
@@ -86,6 +87,10 @@ body {
 
 .header-nav-right .header-cart #cart #cart-total {
     margin: 0 5px;
+}
+
+.nav-form>.btn.btn-default {
+    height: 34px !important;
 }
 
 
@@ -223,6 +228,13 @@ body {
 
 /* Banner */
 
+.carousel {
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: -1 !important;
+}
+
 .carousel-control span {
     color: #fff !important;
 }
@@ -246,13 +258,13 @@ body {
     padding: 10px;
 }
 
-.product-tab .title-wrapper {
+.title-wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.product-tab .title-wrapper .box-heading>h3 {
+.title-wrapper .box-heading>h3 {
     font-size: 2.3rem;
     font-weight: bold;
     margin: 0;
@@ -260,13 +272,13 @@ body {
     text-transform: uppercase;
 }
 
-.product-tab .title-wrapper .controls.clickable>.controls-btn {
+.title-wrapper .controls.clickable>.controls-btn {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.product-tab .title-wrapper .controls.clickable>.controls-btn>a {
+.title-wrapper .controls.clickable>.controls-btn>a {
     margin: 0 1.2rem;
     padding: 1rem 1.2rem;
     background: rgba(0, 0, 0, .1);
@@ -275,23 +287,23 @@ body {
     cursor: pointer;
 }
 
-.product-tab .title-wrapper .controls.clickable>.controls-btn>a svg {
+.title-wrapper .controls.clickable>.controls-btn>a svg {
     font-size: 1.5rem;
     font-weight: lighter;
 }
 
-.product-tab .tab-content {
+.tab-content {
     margin: 1rem 0;
     padding: 0;
 }
 
-.product-tab .tab-content>div {
+.tab-content>div {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-gap: 20px;
 }
 
-.product-tab .tab-content .product-item {
+.product-item {
     position: relative;
     top: 0;
     left: 0;
@@ -300,12 +312,12 @@ body {
     overflow: hidden;
 }
 
-.product-tab .tab-content .product-item:hover {
+.product-item:hover {
     opacity: .5;
     box-shadow: 0 5px 10px 0 rgba(0, 0, 0, .5);
 }
 
-.product-tab .tab-content .product-item .img-product {
+.product-item .img-product {
     position: relative;
     top: 0;
     left: 0;
@@ -322,39 +334,45 @@ body {
     margin: 0 auto;
 }
 
-.product-tab .tab-content .product-item .img-product img {
+.product-item .img-product img {
     width: 200px;
     height: 200px;
     margin: 0 auto;
 }
 
-.product-tab .tab-content .product-item .details-product {
+.product-item .details-product {
+    position: relative;
+    top: 50%;
+    left: 0;
     text-align: center;
 }
 
-.product-tab .tab-content .product-item .details-product h4 {
+.product-item .details-product h4 {
     font-size: 2rem;
     font-weight: bolder;
     text-transform: capitalize;
 }
 
-.product-tab .tab-content .product-item .details-product h5 {
+.product-item .details-product h5 {
     font-size: 1.8rem;
 }
 
-.product-tab .tab-content .product-item .button-group {
+.product-item .button-group {
     position: absolute;
     top: 0;
     left: 0;
     transform: translateX(100%) rotateX(90deg);
     width: 100%;
     height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background: rgba(0, 0, 0, .5);
     opacity: 0;
     transition: all 0.3s linear;
 }
 
-.product-tab .tab-content .product-item .button-group button {
+.product-item .button-group a {
     display: block;
     padding: 8px;
     background: none;
@@ -362,11 +380,15 @@ body {
     outline: none;
 }
 
-.product-tab .tab-content .product-item .button-group svg {
-    font-size: 2rem;
+.product-item .button-group svg {
+    font-size: 3.2rem;
 }
 
-.product-tab .tab-content .product-item:hover .button-group {
+.product-item .button-group path {
+    color: #fff;
+}
+
+.product-item:hover .button-group {
     transform: translateX(0);
     opacity: 1;
 }
@@ -487,21 +509,21 @@ div.form .form-group .control-label {
     font-size: 1.7rem;
 }
 
+
 /* animation alert */
 
 #alert-mess {
-    position: absolute;
-    right: 0;
-    top: 100px;
-    transition: all 0.7s;
+    position: relative;
+    top: 0;
+    left: 0;
     background: #4de93f;
     padding: 10px;
     color: #f1f1f1;
+    z-index: 100;
 }
 
 .hideMess {
-    transform: translateX(401px);
-    
+    transform: translateX(0);
 }
 
 .showMess {

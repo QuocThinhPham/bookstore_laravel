@@ -2,9 +2,10 @@
 @section("content")
 
 @if(isset($info))
-    <div class="hideMess" id="alert-mess">
-      <h3>Đăng ký thành công đăng nhập nào.</h3>
-    </div>
+<div class="hideMess" id="alert-mess" style="z-index:10;">
+  <h3>{{ $info }}</h3>
+  <!-- Đăng ký thành công đăng nhập nào. -->
+</div>
 @endif
 <!-- Register -->
 <div class="form form-customer">
@@ -38,17 +39,17 @@
     <div class="form-group">
       <label class="control-label col-lg-4">Password</label>
       <div class="col-lg-8">
-        <input type="password" name="password" id="" class="form-control" required>
+        <input type="password" name="password" id="" class="form-control psw" required>
       </div>
     </div>
     <div class="form-group">
       <label class="control-label col-lg-4">Repeat Password</label>
       <div class="col-lg-8">
-        <input type="password" name="re-password" id="" class="form-control" required>
+        <input type="password" name="re_password" id="" class="form-control re-psw" required>
       </div>
     </div>
     <div class="form-group text-center">
-      <button type="submit" class="btn btn-primary">Register</button>
+      <button type="submit" class="btn btn-primary register-btn">Register</button>
     </div>
   </form>
 </div>

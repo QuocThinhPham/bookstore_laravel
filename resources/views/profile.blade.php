@@ -4,9 +4,10 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
-            <h1>My Order</h1>
+            <h1 class="text-center text-info">My Order</h1>
             @foreach($orders as $order)
             <div class="panel panel-default">
+                <div class="panel-heading text-center"><strong>Ngày: {{ date_format($order->created_at,'d-m-y') }}</strong></div>
                 <div class="panel-body">
                     <ul class="list-group">
                         @foreach ($order->book as $item)
@@ -21,7 +22,6 @@
                 </div>
             </div>
             @endforeach
-
         </div>
     </div>
 </div>

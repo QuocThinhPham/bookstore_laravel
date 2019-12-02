@@ -20,26 +20,23 @@ class OrderController extends Controller
         // $orders = $orders->map(function($order, $key){
         //     return unserialize($order->cart);
         // });
-    
+
         return view('profile', ['orders' => $orders]);
     }
 
     public function addOrder()
     {
-        if(!Auth::check())
-            redirect('/login');
+        if (!Auth::check())
+            return redirect('login');
 
-        
-        
         $cart = Session::get('cart');
         $order = new Order();
         $order->user_id = Auth::user()->user_id;
         $order->totalPrice = $cart['totalPrice'];
         $order->save();
-        foreach($cart['items'] as $sItem)
-        {
+        foreach ($cart['items'] as $sItem) {
             DB::table('order_detail')
-            ->insert(['order_id' => $order->order_id, 'book_id' => $sItem['item']['book_id'], 'amount' => $sItem['amount']]);
+                ->insert(['order_id' => $order->order_id, 'book_id' => $sItem['item']['book_id'], 'amount' => $sItem['amount']]);
         }
         Session::forget('cart');
         return redirect('profile');

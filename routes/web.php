@@ -14,7 +14,7 @@
 
 
 Route::get('/', function () {
-    return view('home');
+    return redirect('home');
 });
 Route::get('home', function () {
     return view('home');
@@ -40,14 +40,14 @@ Route::get('logout', 'LoginController@logout');
 Route::get('books', 'BooksController@index');
 
 //cart
-Route::get('/cart', 'CartController@getAddToCart');
-Route::get('/shopping', 'CartController@getCart');
+Route::get('cart', 'CartController@getAddToCart');
+Route::get('shopping', 'CartController@getCart');
 
 //checkout
-Route::get('/checkout', 'OrderController@addOrder');
+Route::get('checkout', 'OrderController@addOrder');
 
 //user profile
-Route::get('/profile', 'OrderController@index');
+Route::get('profile', 'OrderController@index');
 Route::get('category', function () {
     return view('category');
 });
