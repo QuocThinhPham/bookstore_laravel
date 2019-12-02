@@ -40,7 +40,7 @@ body {
     font-size: 3rem;
     font-weight: bold;
     padding: 0 10px;
-    color: #fff;
+    color: #ffb53e;
 }
 
 .header-nav-right a:hover,
@@ -82,7 +82,7 @@ body {
 
 .header-nav-right .myaccount .dropdown-menu a:focus,
 .header-nav-right .myaccount .dropdown-menu a:hover {
-    color: #5680E9;
+    color: #ffb53e;
 }
 
 .header-nav-right .header-cart #cart #cart-total {
@@ -512,20 +512,30 @@ div.form .form-group .control-label {
 
 /* animation alert */
 
-#alert-mess {
-    position: relative;
-    top: 0;
-    left: 0;
-    background: #4de93f;
-    padding: 10px;
-    color: #f1f1f1;
+#alert-mess h3 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+    background: #f4f4f4;
+    color: #000;
+    border: 2px solid #000;
+    border-radius: 20px;
+    padding: 1.5rem 0;
     z-index: 100;
 }
 
 .hideMess {
-    transform: translateX(0);
+    visibility: hidden;
 }
 
 .showMess {
-    transform: translateX(0);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, .5);
+    visibility: visible;
 }

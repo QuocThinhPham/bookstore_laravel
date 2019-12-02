@@ -6,7 +6,6 @@
     <div class="row">
         <div class="col-sm-12 col-md-10 col-md-offset-1">
             <table class="table table-hover">
-
                 <thead>
                     <tr>
                         <th>Product</th>
@@ -34,10 +33,13 @@
                         </td>
                         <td class="col-sm-2 col-md-2 text-center"><strong>{{ number_format($book['item']['book_price'],0,',','.') }} VNĐ</strong></td>
                         <td class="col-sm-1 col-md-1 text-center"><strong>{{ number_format($book['item']['book_price'] * $book['amount'],0,',','.') }} VNĐ<strong></td>
-                        <td class="col-sm-2 col-md-2 text-right">
-                            <button type="button" class="btn btn-danger">
-                                Remove
-                            </button></td>
+                        <td class="col-sm-1 col-md-1">
+                            <a href="/remove-cart/{{ $book['item']['book_id'] }}">
+                                <button type="button" class="btn btn-danger" class="btn-del" id="{{ $book['item']['book_id'] }}">
+                                    Remove
+                                </button>
+                            </a>
+                        </td>
                     </tr>
                     @endforeach
                     <tr>
@@ -56,24 +58,28 @@
                         <td>   </td>
                         <td>   </td>
                         <td>
-                            <button type="button" class="btn btn-default">
-                                <a href="{{ asset('books') }}" style="text-decoration: none;color:#000;"><span class="glyphicon glyphicon-shopping-cart"></span> Continue Shopping</a>
-                            </button></td>
+                            <a href="{{ asset('books') }}">
+                                <button type="button" class="btn btn-default">
+                                    <span class="glyphicon glyphicon-shopping-cart"></span> Tiếp tục mua sắm
+                                </button>
+                            </a>
+                        </td>
                         <td>
-                            <button type="button" class="btn btn-primary">
-                                <a href="{{asset('checkout')}}" style="text-decoration: none;color:#fff;">Checkout</a>
-                            </button></td>
+                            <a href="{{asset('checkout')}}" style="text-decoration: none;">
+                                <button type="button" class="btn btn-success">
+                                    Checkout
+                                </button>
+                            </a>
+                        </td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
     @else
-    <div class="row">
-        <div class="col-sm-12 col-md-10 col-md-offset-1">
-            <h2 class="alert alert-info text-center">Không có mặt hàng nào trong giỏ</h2>
-        </div>
+    <div class="row text-center">
+        <h2 class="alert alert-info">Không có mặt hàng nào trong giỏ</h2>
+        <a href="{{ asset('books') }}" class="btn btn-primary">Mua hàng</a>
     </div>
     @endif
 </div>
-@endsection

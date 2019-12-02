@@ -31,7 +31,6 @@ Route::post('register', 'RegisterController@createUser');
 //login
 Route::get('login', 'LoginController@index');
 Route::post('login', 'LoginController@checkUser');
-// Route::post('login', 'LoginController@postLogin');
 
 //logout
 Route::get('logout', 'LoginController@logout');
@@ -40,8 +39,9 @@ Route::get('logout', 'LoginController@logout');
 Route::get('books', 'BooksController@index');
 
 //cart
-Route::get('cart', 'CartController@getAddToCart');
 Route::get('shopping', 'CartController@getCart');
+Route::get('cart', 'CartController@getAddToCart');
+Route::get('remove-cart/{id}', 'CartController@removeCartItem');
 
 //checkout
 Route::get('checkout', 'OrderController@addOrder');
@@ -55,9 +55,10 @@ Route::get('category', function () {
 // Route -> Admin
 Route::group(['prefix' => 'dashboard'], function () {
     Route::group(['namespace' => 'Admin'], function () {
-        Route::get('login', 'LoginController@getLogin');
+        Route::get('login', 'LoginController@getLogin')->name('login');
         Route::post('login', 'LoginController@postLogin');
 
+        Route::get('/', 'AdminController@index');
         Route::get('home', 'AdminController@index');
 
         Route::get('user', 'UserController@getUser');
@@ -103,11 +104,15 @@ Route::group(['prefix' => 'dashboard'], function () {
 
             Route::get('delete/{id}', 'AuthorController@getDeleteAuthor');
         });
+
+        Route::group(['prefix' => 'order'], function () {
+            Route::get('/', 'OrderController@getOrder');
+        });
     });
 });
 
 
 //clear session
-Route::get('/clear', function () {
+Route::get('clear', function () {
     Session::forget('cart');
 });

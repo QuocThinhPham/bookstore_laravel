@@ -20,5 +20,4 @@ class BooksController extends Controller
         $books = Books::all();
         return view('books.index')->with('books', $books);
     }
-
 }

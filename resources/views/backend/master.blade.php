@@ -62,6 +62,9 @@
       <li><a href="{{ asset('dashboard/author') }}"><svg class="glyph stroked line-graph">
             <use xlink:href="#stroked-line-graph"></use>
           </svg> Tác giả</a></li>
+      <li><a href="{{ asset('dashboard/order') }}"><svg class="glyph stroked line-graph">
+            <use xlink:href="#stroked-line-graph"></use>
+          </svg> Hoá đơn</a></li>
 
       <li role="presentation" class="divider"></li>
     </ul>

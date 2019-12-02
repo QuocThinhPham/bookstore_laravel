@@ -37,7 +37,7 @@
 										<td>{{$book->book_name}}</td>
 										<td>{{number_format($book->book_price,0,',','.')}} VNĐ</td>
 										<td>
-											<img width="150px" height="100px" src="{{ asset('../storage/app/avatar/'.$book->book_img) }}" class="thumbnail">
+											<img width="150px" height="100px" src="{{ asset('frontend/images/'.$book->book_img) }}" class="thumbnail">
 										</td>
 										<td>{{ $book->author->author_name }}</td>
 										<td>{{ $book->type->type_name }}</td>

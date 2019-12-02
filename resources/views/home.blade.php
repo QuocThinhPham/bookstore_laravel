@@ -2,10 +2,11 @@
 @section("content")
 
 @include('include.header')
-<div class="alert alert-info hideMess" id="alert-mess">
-  <h3>Đăng ký thành công! Vui lòng đăng nhập để tiếp tục</h3>
-  <!-- Đăng ký thành công đăng nhập nào. -->
+@if(isset($info))
+<div class="hideMess" id="alert-mess">
+  <h3 class="text-center">{{ $info }}</h3>
 </div>
+@endif
 <!-- Banner -->
 <div class="container">
   <div id="myCarousel" class="carousel slide" data-ride="carousel" style="width: 100%;height: calc(80vh - 100px);">

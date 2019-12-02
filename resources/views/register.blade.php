@@ -2,9 +2,8 @@
 @section("content")
 
 @if(isset($info))
-<div class="hideMess" id="alert-mess" style="z-index:10;">
-  <h3>{{ $info }}</h3>
-  <!-- Đăng ký thành công đăng nhập nào. -->
+<div class="hideMess" id="alert-mess" style="z-index:100;">
+  <h3 class="text-center">{{ $info }}</h3>
 </div>
 @endif
 <!-- Register -->

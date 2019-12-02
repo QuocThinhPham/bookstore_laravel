@@ -17,9 +17,6 @@ class OrderController extends Controller
     public function index()
     {
         $orders = Users::find(Auth::user()->user_id)->order;
-        // $orders = $orders->map(function($order, $key){
-        //     return unserialize($order->cart);
-        // });
 
         return view('profile', ['orders' => $orders]);
     }
@@ -28,7 +25,6 @@ class OrderController extends Controller
     {
         if (!Auth::check())
             return redirect('login');
-
         $cart = Session::get('cart');
         $order = new Order();
         $order->user_id = Auth::user()->user_id;

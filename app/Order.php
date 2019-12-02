@@ -14,11 +14,13 @@ class Order extends Model
 
     public function user()
     {
-        return $this-belongsTo('App\Users', 'user_id');
+        return $this->belongsTo('App\Users', 'user_id');
     }
 
     public function book()
     {
         return $this->belongsToMany('App\books', 'order_detail', 'order_id', 'book_id')->withPivot('amount');
     }
-} 
+
+    //Order
+}

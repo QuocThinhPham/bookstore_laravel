@@ -19,7 +19,6 @@
           </form>
         </div>
         <div class="header-nav-right col-lg-7 col-md-7 col-lg-offset-3">
-
           <div class="header-cart col-lg-2 col-md-2">
             <div id="cart">
               <!-- <span class="cart-icon"></span> -->
@@ -35,26 +34,23 @@
           <div class="dropdown myaccount col-lg-7 col-md-7 col-lg-offset-2">
             <a class="dropdown-toggle" data-toggle="dropdown">
               <span class="user-info-image">
-                @if (Auth::check())
-                <i class="far fa-user"></i>{{Auth::user() -> user_name}}
+                @if (Auth::guard('users')->check())
+                <i class="far fa-user"></i>{{Auth::guard('users')->user() -> user_name}}
                 @else
                 <i class="far fa-user"></i>My Acount
                 @endif
               </span>
               <span class="caret"></span>
             </a>
-            @if(isset(Auth::user()->user_email))
+            @if(Auth::guard('users')->check())
             <ul class="dropdown-menu">
-              @if(Auth::user()->is_admin)
-              <li><a href="{{url('dashboard')}}">Dashboard</a></li>
-              @endif
-              <li><a href="{{url('profile')}}">Hoá đơn</a></li>
-              <li><a href="{{url('logout')}}">Dăng xuất</a></li>
+              <li><a href="{{ url('profile') }}">Hoá đơn</a></li>
+              <li><a href="{{ url('logout') }}">Đăng xuất</a></li>
             </ul>
             @else
             <ul class="dropdown-menu">
-              <li id="register"><a href="{{url('register')}}">Đăng ký</a></li>
-              <li id="login"><a href="{{url('login')}}">Đăng nhập</a></li>
+              <li id="register"><a href="{{ url('register') }}">Đăng ký</a></li>
+              <li id="login"><a href="{{ url('login') }}">Đăng nhập</a></li>
             </ul>
             @endif
           </div>
