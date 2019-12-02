@@ -10,10 +10,7 @@
 
 body {
     background: #f1f1f1 !important;
-<<<<<<< HEAD
     overflow-x: hidden;
-=======
->>>>>>> QThinh
 }
 
 
@@ -501,6 +498,7 @@ div.form .form-group .control-label {
     background: #2666f0;
     padding: 10px;
     color: #f1f1f1;
+    z-index: 999;
 }
 
 .hideMess {

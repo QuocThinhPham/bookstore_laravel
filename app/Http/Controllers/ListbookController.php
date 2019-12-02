@@ -9,6 +9,6 @@ class ListbookController extends Controller
     public function index($id)
     {
         $books = Books::all()->where('type_id',$id);
-        return view('books.index')->with('books',$books);
+        return view('category')->with('books',$books);
     }
 }

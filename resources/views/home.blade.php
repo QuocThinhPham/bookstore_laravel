@@ -5,7 +5,7 @@
 @if(isset($info))
   <div class="showMess" id="alert-mess">{{$info}}</div>
 @endif
-<div class="container column-right">
+<div class="container column-right mt-5">
   <div id="myCarousel" class="carousel slide" data-ride="carousel" style="width: 100%;height: calc(80vh - 100px);">
     <!-- Indicators -->
     <ol class="carousel-indicators">

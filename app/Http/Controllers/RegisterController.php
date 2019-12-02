@@ -24,6 +24,6 @@ class RegisterController extends Controller
         $user->user_password = Hash::make($req->password);
         $user->save();
         $info = 'Đăng ký thành công. Vui lòng đăng nhập để tiếp tục';
-        return view('home', compact('info'));
+        return redirect('home')->with('info', $info);
     }
 }

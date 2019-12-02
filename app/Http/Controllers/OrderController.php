@@ -20,7 +20,7 @@ class OrderController extends Controller
     public function index()
     {
 
-        $orders = Users::find(Auth::user()->user_id)->order;
+        $orders = Users::find(Auth::guard('users')->user()->user_id)->order;
         // $orders = $orders->map(function($order, $key){
         //     return unserialize($order->cart);
         // });
@@ -30,11 +30,11 @@ class OrderController extends Controller
 
     public function addOrder()
     {
-        if(!Auth::check())
+        if(!Auth::guard('users')->check())
             return redirect('/login');
         $cart = Session::get('cart');
         $order = new Order();
-        $order->user_id = Auth::user()->user_id;
+        $order->user_id = Auth::guard('users')->user()->user_id;
         $order->totalPrice = $cart['totalPrice'];
         $order->save();
         foreach($cart['items'] as $sItem)

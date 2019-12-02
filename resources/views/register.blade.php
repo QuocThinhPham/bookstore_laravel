@@ -38,13 +38,13 @@
     <div class="form-group">
       <label class="control-label col-lg-4">Password</label>
       <div class="col-lg-8">
-        <input type="password" name="password" id="" class="form-control" required>
+        <input type="password" name="password" id="password" class="form-control" required>
       </div>
     </div>
     <div class="form-group">
       <label class="control-label col-lg-4">Repeat Password</label>
       <div class="col-lg-8">
-        <input type="password" name="re-password" id="" class="form-control" required>
+        <input type="password" name="re-password" id="confirm_passwords" class="form-control" required>
       </div>
     </div>
     <div class="form-group text-center">

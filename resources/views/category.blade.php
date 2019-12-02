@@ -1,7 +1,7 @@
 @extends('layout.master')
 @include('include.header')
 @section('content')
-@include('include.category-menu')
+{{-- @include('include.category-menu') --}}
 <div class="container">
   <div class="row">
     @if (count($books) > 0)

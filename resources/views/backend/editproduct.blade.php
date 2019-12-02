@@ -30,7 +30,7 @@
 								<div class="form-group">
 									<label>Ảnh sản phẩm</label>
 									<input id="img" type="file" name="img" class="form-control" onchange="changeImg(this)">
-									<img id="avatar" class="thumbnail" width="300px" src="{{ asset('../storage/app/avatar/'.$product->book_img) }}">
+									<img id="avatar" class="thumbnail" width="300px" src="{{ asset('frontend/images/'.$product->book_img) }}">
 								</div>
 								<div class="form-group">
 									<label>Trạng thái</label>

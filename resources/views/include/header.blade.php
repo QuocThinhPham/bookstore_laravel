@@ -11,10 +11,10 @@
         <div class="nav-form col lg-5 col-lg-offset-1">
         <form action="{{url('search')}}" class="form-inline" method="get">
             <input type="text" name="search" id="" class="form-control" placeholder="Search">
-            <button type="submit" class="btn btn-default">
+            <button type="submit" class="btn btn-default ">
               <i class="fas fa-search"></i>
             </button>
-          </form>
+        </form>
         </div>
         <div class="header-nav-right col-lg-5">
           <!-- login part -->
