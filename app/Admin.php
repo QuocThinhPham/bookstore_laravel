@@ -10,7 +10,7 @@ class Admin extends Authenticatable
 {
     //
     protected $table = 'admin';
-    protected $primaryKey = 'id';
+    protected $primaryKey = 'admin_id';
     protected $guard = [];
 
     public function getAuthPassword()

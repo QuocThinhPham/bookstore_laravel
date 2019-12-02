@@ -32,24 +32,25 @@ Route::get('login', 'LoginController@index');
 Route::post('login', 'LoginController@checkUser');
 // Route::post('login', 'LoginController@postLogin');
 
-
 //logout
 Route::get('logout', 'LoginController@logout');
-
 
 //book
 Route::get('books', 'BooksController@index');
 
-
 //cart
-Route::get('/cart', 'BooksController@getAddToCart');
-Route::get('/shopping', 'BooksController@getCart');
+Route::get('/cart', 'CartController@getAddToCart');
+Route::get('/shopping', 'CartController@getCart');
+Route::get('/remove-cart/{id}', 'CartController@removeCartItem');
 
 //checkout
 Route::get('/checkout', 'OrderController@addOrder');
 
 //user profile
 Route::get('/profile', 'OrderController@index');
+Route::get('category', function () {
+    return view('category');
+});
 
 // Route -> Admin
 Route::group(['prefix' => 'dashboard'], function () {
@@ -104,7 +105,7 @@ Route::group(['prefix' => 'dashboard'], function () {
         });
     });
 });
-    Route::get('listbook/{type_id}','ListbookController@index');
+Route::get('listbook/{type_id}','ListbookController@index');
 //clear session
 // Route::get('/clear', function(){
 //     Session::forget('cart');

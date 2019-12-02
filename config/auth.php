@@ -54,6 +54,17 @@ return [
             'driver' => 'token',
             'provider' => 'users',
         ],
+<<<<<<< HEAD
+=======
+        'admin' => [
+            'driver' => 'session',
+            'provider' => 'admin',
+        ],
+        'admin-api' => [
+            'driver' => 'token',
+            'provider' => 'admin',
+        ],
+>>>>>>> QThinh
     ],
 
     /*

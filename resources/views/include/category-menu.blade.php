@@ -3,7 +3,7 @@
 <div class="column-left">
   <div class="category">
     <div class="category-heading">
-      Shop by Categories
+      Categories
     </div>
     <div class="category-content">
       <ul id="category-menu">

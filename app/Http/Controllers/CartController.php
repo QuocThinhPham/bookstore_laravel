@@ -10,8 +10,11 @@ class CartController extends Controller
 {
     //
    
+
+    //add item to cart
     public function getAddToCart(Request $req)
     {
+        //still not a clean code
         $id = $req->id;
         if(Session::has('cart')) 
         {
@@ -37,7 +40,7 @@ class CartController extends Controller
     }
 
     
-
+    // show cart item
     public function getCart()
     {
         if(!Session::has('cart'))
@@ -48,5 +51,24 @@ class CartController extends Controller
         $books = $cart['items'];
         $totalPrice = $cart['totalPrice'];
         return view('cart', ['books' => $books, 'totalPrice' => $totalPrice]);
+    }
+
+    public function removeCartItem(Request $req)
+    {
+        //still not a clean code
+        $id = $req->id;
+        $cart = Session::get('cart');
+        $req->session()->forget('cart');
+        $cart['totalAmount'] -= $cart['items'][$id]['amount'];
+        if($cart['totalAmount'] == 0)
+        {
+            $req->session()->forget('cart');
+            return redirect('/shopping');
+        }
+        $cart['totalPrice'] -= $cart['items'][$id]['item']['book_price'] * $cart['items'][$id]['amount'];
+        unset($cart['items'][$id]);
+        Session::put('cart', $cart);
+        
+        return redirect('/shopping');
     }
 }
