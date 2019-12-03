@@ -51,6 +51,7 @@
             <ul class="dropdown-menu">
               <li id="register"><a href="{{ url('register') }}">Đăng ký</a></li>
               <li id="login"><a href="{{ url('login') }}">Đăng nhập</a></li>
+              <li id="login"><a href="{{ url('dashboard/login') }}">Đăng nhập Admin</a></li>
             </ul>
             @endif
           </div>
@@ -66,7 +67,7 @@
               <ul class="nav navbar-nav">
                 <li><a href="{{ asset('home') }}">home</a></li>
                 <li><a href="{{asset('books')}}">books</a></li>
-                <li><a href="{{asset('category')}}">Categories</a></li>
+                <li><a href="{{asset('category')}}">categories</a></li>
               </ul>
             </div>
           </nav>

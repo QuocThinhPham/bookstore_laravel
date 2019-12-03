@@ -23,18 +23,19 @@
             <a href="#" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown">
               <svg class="glyph stroked male-user">
                 <use xlink:href="#stroked-male-user"></use>
-              </svg> <span class="caret"></span>
+              </svg> {{Auth::guard('admin')->user()->email}} <span class="caret"></span>
             </a>
-            <ul class="dropdown-menu" aria-labelledby="dropdown">
-              <li class="dropdown-item">
-                <a href="{{ asset('logout') }}">
-                  <svg class="glyph stroked cancel">
-                    <use xlink:href="#stroked-cancel"></use>
-                  </svg> Logout
-                </a>
-              </li>
-            </ul>
           </li>
+          <!-- <ul class="dropdown-menu" aria-labelledby="dropdown"> -->
+          <li class="dropdown-item">
+            <a href="{{ asset('logout') }}">
+              <svg class="glyph stroked cancel">
+                <use xlink:href="#stroked-cancel"></use>
+              </svg> Logout
+            </a>
+          </li>
+          <!-- </ul> -->
+          <!-- </li> -->
         </ul>
       </div>
 

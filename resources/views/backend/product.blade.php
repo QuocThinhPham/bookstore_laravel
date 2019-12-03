@@ -24,10 +24,10 @@
 										<th>ID</th>
 										<th width="30%">Tên Sản phẩm</th>
 										<th>Giá sản phẩm</th>
-										<th width="20%">Ảnh sản phẩm</th>
+										<th width="15%">Ảnh sản phẩm</th>
 										<th>Tác giả</th>
 										<th>Danh mục</th>
-										<th>Tùy chọn</th>
+										<th width="12%">Tùy chọn</th>
 									</tr>
 								</thead>
 								<tbody>

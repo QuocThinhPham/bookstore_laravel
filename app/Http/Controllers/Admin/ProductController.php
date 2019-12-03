@@ -42,7 +42,8 @@ class ProductController extends Controller
         $product->type_id = $request->type;
 
         $product->save();
-        $request->img->storeAs('avatar', $filename);
+
+        $request->img->move(public_path('/frontend/images'), $filename);
 
         return back();
     }
@@ -70,7 +71,7 @@ class ProductController extends Controller
         if ($request->hasFile('img')) {
             $img = $request->img->getClientOriginalName();
             $arr['book_img'] = $img;
-            $request->img->storeAs('avatar', $img);
+            $request->img->move(public_path('/frontend/images'), $img);
         }
         $product::where('book_id', $id)->update($arr);
         return redirect('dashboard/product');

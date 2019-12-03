@@ -24,4 +24,10 @@ class LoginController extends Controller
             return back()->withInput()->with('error', 'Tài khoản hoặc mật khẩu chưa đúng');
         }
     }
+
+    public function getLogout()
+    {
+        Auth::guard('admin')->logout();
+        return redirect('dashboard/login');
+    }
 }

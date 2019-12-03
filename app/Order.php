@@ -19,8 +19,6 @@ class Order extends Model
 
     public function book()
     {
-        return $this->belongsToMany('App\books', 'order_detail', 'order_id', 'book_id')->withPivot('amount');
+        return $this->belongsToMany('App\Books', 'order_detail', 'order_id', 'book_id')->withPivot('amount');
     }
-
-    //Order
 }
