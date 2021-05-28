@@ -21,4 +21,4 @@ class Order extends Model
     {
         return $this->belongsToMany('App\books', 'order_detail', 'order_id', 'book_id')->withPivot('amount');
     }
-} 
+}
